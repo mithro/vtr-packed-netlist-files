@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<block name="mwire.net" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:c48f3404a248664bdc41b980a47588eff48a7f621b33fe2cb59066f7266ee064" atom_netlist_id="SHA256:7c0c0ac6b239db4b87ab3175d3e96b80c16c4c2c9a7125dbc72c689092740445">
+	<inputs>i0 i1 i2</inputs>
+	<outputs>out:o0 out:o1 out:o2 out:o3 out:o4 out:o5</outputs>
+	<clocks></clocks>
+	<block name="out:o0" instance="BLK_IG-OBUF[0]" mode="default">
+		<inputs>
+			<port name="O">i0</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:o0" instance="BLK_BB-OBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">BLK_IG-OBUF.O[0]-&gt;OBUF</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:o1" instance="BLK_IG-OBUF[1]" mode="default">
+		<inputs>
+			<port name="O">i1</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:o1" instance="BLK_BB-OBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">BLK_IG-OBUF.O[0]-&gt;OBUF</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:o2" instance="BLK_IG-OBUF[2]" mode="default">
+		<inputs>
+			<port name="O">i1</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:o2" instance="BLK_BB-OBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">BLK_IG-OBUF.O[0]-&gt;OBUF</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:o3" instance="BLK_IG-OBUF[3]" mode="default">
+		<inputs>
+			<port name="O">i2</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:o3" instance="BLK_BB-OBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">BLK_IG-OBUF.O[0]-&gt;OBUF</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:o4" instance="BLK_IG-OBUF[4]" mode="default">
+		<inputs>
+			<port name="O">i2</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:o4" instance="BLK_BB-OBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">BLK_IG-OBUF.O[0]-&gt;OBUF</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:o5" instance="BLK_IG-OBUF[5]" mode="default">
+		<inputs>
+			<port name="O">i2</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:o5" instance="BLK_BB-OBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">BLK_IG-OBUF.O[0]-&gt;OBUF</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="i0" instance="BLK_IG-IBUF[6]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="I">BLK_BB-IBUF[0].inpad[0]-&gt;IBUF</port>
+		</outputs>
+		<clocks />
+		<block name="i0" instance="BLK_BB-IBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">i0</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="i1" instance="BLK_IG-IBUF[7]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="I">BLK_BB-IBUF[0].inpad[0]-&gt;IBUF</port>
+		</outputs>
+		<clocks />
+		<block name="i1" instance="BLK_BB-IBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">i1</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="i2" instance="BLK_IG-IBUF[8]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="I">BLK_BB-IBUF[0].inpad[0]-&gt;IBUF</port>
+		</outputs>
+		<clocks />
+		<block name="i2" instance="BLK_BB-IBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">i2</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+</block>

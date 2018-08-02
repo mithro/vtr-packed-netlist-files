@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<block name="constant_outputs_only.net" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:f43614698fc27a513dd6fff899f78785a18fdd36ba8f1fe965687038c07a5d7f" atom_netlist_id="SHA256:75d31b8225389e8c12aa64350414a871cb1ff2f9a7570d6089367e3a5881326f">
+	<inputs></inputs>
+	<outputs>out:const_one out:const_zero</outputs>
+	<clocks></clocks>
+	<block name="out:const_one" instance="io[0]" mode="outpad">
+		<inputs>
+			<port name="outpad">const_one</port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open</port>
+		</outputs>
+		<clocks>
+			<port name="clock">open</port>
+		</clocks>
+		<block name="out:const_one" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">io.outpad[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:const_zero" instance="io[1]" mode="outpad">
+		<inputs>
+			<port name="outpad">const_zero</port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open</port>
+		</outputs>
+		<clocks>
+			<port name="clock">open</port>
+		</clocks>
+		<block name="out:const_zero" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">io.outpad[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="const_one" instance="clb[2]" mode="default">
+		<inputs>
+			<port name="I">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+		</inputs>
+		<outputs>
+			<port name="O">open open open open open open open open fle[8].out[0]-&gt;clbouts1 fle[9].out[0]-&gt;clbouts1</port>
+		</outputs>
+		<clocks>
+			<port name="clk">open</port>
+		</clocks>
+		<block name="open" instance="fle[0]" />
+		<block name="open" instance="fle[1]" />
+		<block name="open" instance="fle[2]" />
+		<block name="open" instance="fle[3]" />
+		<block name="open" instance="fle[4]" />
+		<block name="open" instance="fle[5]" />
+		<block name="open" instance="fle[6]" />
+		<block name="open" instance="fle[7]" />
+		<block name="const_zero" instance="fle[8]" mode="n1_lut6">
+			<inputs>
+				<port name="in">open open open open open open</port>
+			</inputs>
+			<outputs>
+				<port name="out">ble6[0].out[0]-&gt;direct2</port>
+			</outputs>
+			<clocks>
+				<port name="clk">open</port>
+			</clocks>
+			<block name="const_zero" instance="ble6[0]" mode="default">
+				<inputs>
+					<port name="in">open open open open open open</port>
+				</inputs>
+				<outputs>
+					<port name="out">lut6[0].out[0]-&gt;mux1</port>
+				</outputs>
+				<clocks>
+					<port name="clk">open</port>
+				</clocks>
+				<block name="const_zero" instance="lut6[0]" mode="lut6">
+					<inputs>
+						<port name="in">open open open open open open</port>
+					</inputs>
+					<outputs>
+						<port name="out">lut[0].out[0]-&gt;direct:lut6</port>
+					</outputs>
+					<clocks />
+					<block name="const_zero" instance="lut[0]">
+						<attributes />
+						<parameters />
+						<inputs>
+							<port name="in">open open open open open open</port>
+						</inputs>
+						<outputs>
+							<port name="out">const_zero</port>
+						</outputs>
+						<clocks />
+					</block>
+				</block>
+				<block name="open" instance="ff[0]" />
+			</block>
+		</block>
+		<block name="const_one" instance="fle[9]" mode="n1_lut6">
+			<inputs>
+				<port name="in">open open open open open open</port>
+			</inputs>
+			<outputs>
+				<port name="out">ble6[0].out[0]-&gt;direct2</port>
+			</outputs>
+			<clocks>
+				<port name="clk">open</port>
+			</clocks>
+			<block name="const_one" instance="ble6[0]" mode="default">
+				<inputs>
+					<port name="in">open open open open open open</port>
+				</inputs>
+				<outputs>
+					<port name="out">lut6[0].out[0]-&gt;mux1</port>
+				</outputs>
+				<clocks>
+					<port name="clk">open</port>
+				</clocks>
+				<block name="const_one" instance="lut6[0]" mode="lut6">
+					<inputs>
+						<port name="in">open open open open open open</port>
+					</inputs>
+					<outputs>
+						<port name="out">lut[0].out[0]-&gt;direct:lut6</port>
+					</outputs>
+					<clocks />
+					<block name="const_one" instance="lut[0]">
+						<attributes />
+						<parameters />
+						<inputs>
+							<port name="in">open open open open open open</port>
+						</inputs>
+						<outputs>
+							<port name="out">const_one</port>
+						</outputs>
+						<clocks />
+					</block>
+				</block>
+				<block name="open" instance="ff[0]" />
+			</block>
+		</block>
+	</block>
+</block>

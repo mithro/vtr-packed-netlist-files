@@ -1,0 +1,1224 @@
+<?xml version="1.0"?>
+<block name="example.net" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:04db9d20628d3e3b8f89ad33533fb3a5ab15997bb5f0ac72ae1a26999dfaa106" atom_netlist_id="SHA256:7b58b5543a3a1ded4daf1df3e8846ebab41e98ae781eb317e6b3a67b3c43988c">
+	<inputs>clk rst</inputs>
+	<outputs>out:counter[0] out:counter[1] out:counter[2] out:counter[3] out:counter[4] out:counter[5] out:counter[6] out:counter[7]</outputs>
+	<clocks>clk</clocks>
+	<block name="$abc$340$n30" instance="BLK_TL-PLB[0]" mode="default">
+		<inputs>
+			<port name="lutff_0/in">open $false counter[6] $abc$340$n25</port>
+			<port name="lutff_1/in">open open open open</port>
+			<port name="lutff_2/in">$abc$340$n21 open counter[5] open</port>
+			<port name="lutff_3/in">open rst counter[0] open</port>
+			<port name="lutff_4/in">open counter[0] open open</port>
+			<port name="lutff_5/in">open open open open</port>
+			<port name="lutff_6/in">open $abc$340$n25 counter[6] open</port>
+			<port name="lutff_7/in">$abc$340$n29 open counter[7] open</port>
+			<port name="lutff_global/cen">open</port>
+			<port name="lutff_global/s_r">rst</port>
+			<port name="FCIN">open</port>
+		</inputs>
+		<outputs>
+			<port name="lutff_0/out">open</port>
+			<port name="lutff_1/out">BLK_IG-LUT4[1].out[0]-&gt;BLK_TL-PLB-lutff_1/out</port>
+			<port name="lutff_2/out">BLK_IG-FF_MODE[0].Q[2]-&gt;BLK_TL-PLB-lutff_2/out</port>
+			<port name="lutff_3/out">BLK_IG-LUT4[3].out[0]-&gt;BLK_TL-PLB-lutff_3/out</port>
+			<port name="lutff_4/out">BLK_IG-FF_MODE[0].Q[4]-&gt;BLK_TL-PLB-lutff_4/out</port>
+			<port name="lutff_5/out">BLK_IG-LUT4[5].out[0]-&gt;BLK_TL-PLB-lutff_5/out</port>
+			<port name="lutff_6/out">BLK_IG-FF_MODE[0].Q[6]-&gt;BLK_TL-PLB-lutff_6/out</port>
+			<port name="lutff_7/out">BLK_IG-FF_MODE[0].Q[7]-&gt;BLK_TL-PLB-lutff_7/out</port>
+			<port name="FCOUT">open</port>
+		</outputs>
+		<clocks>
+			<port name="lutff_global/clk">clk</port>
+		</clocks>
+		<block name="open" instance="BLK_IG-LUT4[0]" />
+		<block name="open" instance="BLK_IG-LUT4[1]" mode="wire" pb_type_num_modes="2">
+			<inputs>
+				<port name="in">open open open SB_CARRY[0].CO[0]-&gt;BLK_IG-LUT4[1].in[3]-CARRY</port>
+			</inputs>
+			<outputs>
+				<port name="out">BLK_IG-LUT4[1].in[3]-&gt;complete:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+		</block>
+		<block name="$abc$340$n22" instance="BLK_IG-LUT4[2]" mode="BLK_IG-LUT4">
+			<inputs>
+				<port name="in">BLK_TL-PLB.lutff_2/in[0]-&gt;BLK_IG-LUT4[2]-in[0] open BLK_TL-PLB.lutff_2/in[2]-&gt;BLK_IG-LUT4[2].in[2] open</port>
+			</inputs>
+			<outputs>
+				<port name="out">lut[0].out[0]-&gt;direct:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+			<block name="$abc$340$n22" instance="lut[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="in">BLK_IG-LUT4.in[0]-&gt;direct:BLK_IG-LUT4 open BLK_IG-LUT4.in[2]-&gt;direct:BLK_IG-LUT4 open</port>
+					<port_rotation_map name="in">0 open 1 open</port_rotation_map>
+				</inputs>
+				<outputs>
+					<port name="out">$abc$340$n22</port>
+				</outputs>
+				<clocks />
+			</block>
+		</block>
+		<block name="$abc$154$n2" instance="BLK_IG-LUT4[3]" mode="BLK_IG-LUT4">
+			<inputs>
+				<port name="in">open BLK_TL-PLB.lutff_3/in[1]-&gt;BLK_IG-LUT4[3]-in[1] BLK_TL-PLB.lutff_3/in[2]-&gt;BLK_IG-LUT4[3].in[2] open</port>
+			</inputs>
+			<outputs>
+				<port name="out">lut[0].out[0]-&gt;direct:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+			<block name="$abc$154$n2" instance="lut[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="in">open BLK_IG-LUT4.in[1]-&gt;direct:BLK_IG-LUT4 BLK_IG-LUT4.in[2]-&gt;direct:BLK_IG-LUT4 open</port>
+					<port_rotation_map name="in">open 1 0 open</port_rotation_map>
+				</inputs>
+				<outputs>
+					<port name="out">$abc$154$n2</port>
+				</outputs>
+				<clocks />
+			</block>
+		</block>
+		<block name="$abc$340$n6" instance="BLK_IG-LUT4[4]" mode="BLK_IG-LUT4">
+			<inputs>
+				<port name="in">open BLK_TL-PLB.lutff_4/in[1]-&gt;BLK_IG-LUT4[4]-in[1] open open</port>
+			</inputs>
+			<outputs>
+				<port name="out">lut[0].out[0]-&gt;direct:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+			<block name="$abc$340$n6" instance="lut[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="in">open BLK_IG-LUT4.in[1]-&gt;direct:BLK_IG-LUT4 open open</port>
+					<port_rotation_map name="in">open 0 open open</port_rotation_map>
+				</inputs>
+				<outputs>
+					<port name="out">$abc$340$n6</port>
+				</outputs>
+				<clocks />
+			</block>
+		</block>
+		<block name="$false" instance="BLK_IG-LUT4[5]" mode="BLK_IG-LUT4">
+			<inputs>
+				<port name="in">open open open open</port>
+			</inputs>
+			<outputs>
+				<port name="out">lut[0].out[0]-&gt;direct:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+			<block name="$false" instance="lut[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="in">open open open open</port>
+				</inputs>
+				<outputs>
+					<port name="out">$false</port>
+				</outputs>
+				<clocks />
+			</block>
+		</block>
+		<block name="$abc$340$n26" instance="BLK_IG-LUT4[6]" mode="BLK_IG-LUT4">
+			<inputs>
+				<port name="in">open BLK_TL-PLB.lutff_6/in[1]-&gt;BLK_IG-LUT4[6]-in[1] BLK_TL-PLB.lutff_6/in[2]-&gt;BLK_IG-LUT4[6].in[2] open</port>
+			</inputs>
+			<outputs>
+				<port name="out">lut[0].out[0]-&gt;direct:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+			<block name="$abc$340$n26" instance="lut[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="in">open BLK_IG-LUT4.in[1]-&gt;direct:BLK_IG-LUT4 BLK_IG-LUT4.in[2]-&gt;direct:BLK_IG-LUT4 open</port>
+					<port_rotation_map name="in">open 0 1 open</port_rotation_map>
+				</inputs>
+				<outputs>
+					<port name="out">$abc$340$n26</port>
+				</outputs>
+				<clocks />
+			</block>
+		</block>
+		<block name="$abc$340$n30" instance="BLK_IG-LUT4[7]" mode="BLK_IG-LUT4">
+			<inputs>
+				<port name="in">BLK_TL-PLB.lutff_7/in[0]-&gt;BLK_IG-LUT4[7]-in[0] open BLK_TL-PLB.lutff_7/in[2]-&gt;BLK_IG-LUT4[7].in[2] open</port>
+			</inputs>
+			<outputs>
+				<port name="out">lut[0].out[0]-&gt;direct:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+			<block name="$abc$340$n30" instance="lut[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="in">BLK_IG-LUT4.in[0]-&gt;direct:BLK_IG-LUT4 open BLK_IG-LUT4.in[2]-&gt;direct:BLK_IG-LUT4 open</port>
+					<port_rotation_map name="in">0 open 1 open</port_rotation_map>
+				</inputs>
+				<outputs>
+					<port name="out">$abc$340$n30</port>
+				</outputs>
+				<clocks />
+			</block>
+		</block>
+		<block name="$auto$simplemap.cc:420:simplemap_dff$80" instance="BLK_IG-FF_MODE[0]" mode="PCLK+SR">
+			<inputs>
+				<port name="E">open</port>
+				<port name="S">BLK_TL-PLB.lutff_global/s_r[0]-&gt;BLK_IG-FF_MODE-S</port>
+				<port name="R">open</port>
+				<port name="D">open open BLK_IG-LUT4[2].out[0]-&gt;BLK_IG-FF_MODE-D[2] open BLK_IG-LUT4[4].out[0]-&gt;BLK_IG-FF_MODE-D[4] open BLK_IG-LUT4[6].out[0]-&gt;BLK_IG-FF_MODE-D[6] BLK_IG-LUT4[7].out[0]-&gt;BLK_IG-FF_MODE-D[7]</port>
+			</inputs>
+			<outputs>
+				<port name="Q">open open BEL_FF-SB_FF[2].Q[0]-&gt;BLK_IG-FF_MODE-Q[2] open BEL_FF-SB_FF[4].Q[0]-&gt;BLK_IG-FF_MODE-Q[4] open BEL_FF-SB_FF[6].Q[0]-&gt;BLK_IG-FF_MODE-Q[6] BEL_FF-SB_FF[7].Q[0]-&gt;BLK_IG-FF_MODE-Q[7]</port>
+			</outputs>
+			<clocks>
+				<port name="C">BLK_TL-PLB.lutff_global/clk[0]-&gt;BLK_IG-FF_MODE-C</port>
+			</clocks>
+			<block name="open" instance="BEL_FF-SB_FF[0]" />
+			<block name="open" instance="BEL_FF-SB_FF[1]" />
+			<block name="$auto$simplemap.cc:420:simplemap_dff$78" instance="BEL_FF-SB_FF[2]" mode="SB_DFFSR">
+				<inputs>
+					<port name="S">BLK_IG-FF_MODE.S[0]-&gt;BEL_FF-SB_FF[2]-S</port>
+					<port name="R">open</port>
+					<port name="D">BLK_IG-FF_MODE.D[2]-&gt;BEL_FF-SB_FF[2]-D</port>
+				</inputs>
+				<outputs>
+					<port name="Q">SB_DFFSR[0].Q[0]-&gt;BEL_FF-SB_FF-Q</port>
+				</outputs>
+				<clocks>
+					<port name="C">BLK_IG-FF_MODE.C[0]-&gt;BEL_FF-SB_FF[2]-C</port>
+				</clocks>
+				<block name="$auto$simplemap.cc:420:simplemap_dff$78" instance="SB_DFFSR[0]">
+					<attributes>
+						<attribute name="src">"SymbiFlow/symbiflow-arch-defs/env/conda/bin/../share/yosys/ice40/cells_map.v:2"</attribute>
+					</attributes>
+					<parameters />
+					<inputs>
+						<port name="R">BEL_FF-SB_FF.S[0]-&gt;SB_DFFSR-R</port>
+						<port name="D">BEL_FF-SB_FF.D[0]-&gt;SB_DFFSR-D</port>
+					</inputs>
+					<outputs>
+						<port name="Q">counter[5]</port>
+					</outputs>
+					<clocks>
+						<port name="C">BEL_FF-SB_FF.C[0]-&gt;SB_DFFSR-C</port>
+					</clocks>
+				</block>
+			</block>
+			<block name="open" instance="BEL_FF-SB_FF[3]" />
+			<block name="$auto$simplemap.cc:420:simplemap_dff$73" instance="BEL_FF-SB_FF[4]" mode="SB_DFFSR">
+				<inputs>
+					<port name="S">BLK_IG-FF_MODE.S[0]-&gt;BEL_FF-SB_FF[4]-S</port>
+					<port name="R">open</port>
+					<port name="D">BLK_IG-FF_MODE.D[4]-&gt;BEL_FF-SB_FF[4]-D</port>
+				</inputs>
+				<outputs>
+					<port name="Q">SB_DFFSR[0].Q[0]-&gt;BEL_FF-SB_FF-Q</port>
+				</outputs>
+				<clocks>
+					<port name="C">BLK_IG-FF_MODE.C[0]-&gt;BEL_FF-SB_FF[4]-C</port>
+				</clocks>
+				<block name="$auto$simplemap.cc:420:simplemap_dff$73" instance="SB_DFFSR[0]">
+					<attributes>
+						<attribute name="src">"SymbiFlow/symbiflow-arch-defs/env/conda/bin/../share/yosys/ice40/cells_map.v:2"</attribute>
+					</attributes>
+					<parameters />
+					<inputs>
+						<port name="R">BEL_FF-SB_FF.S[0]-&gt;SB_DFFSR-R</port>
+						<port name="D">BEL_FF-SB_FF.D[0]-&gt;SB_DFFSR-D</port>
+					</inputs>
+					<outputs>
+						<port name="Q">counter[0]</port>
+					</outputs>
+					<clocks>
+						<port name="C">BEL_FF-SB_FF.C[0]-&gt;SB_DFFSR-C</port>
+					</clocks>
+				</block>
+			</block>
+			<block name="open" instance="BEL_FF-SB_FF[5]" />
+			<block name="$auto$simplemap.cc:420:simplemap_dff$79" instance="BEL_FF-SB_FF[6]" mode="SB_DFFSR">
+				<inputs>
+					<port name="S">BLK_IG-FF_MODE.S[0]-&gt;BEL_FF-SB_FF[6]-S</port>
+					<port name="R">open</port>
+					<port name="D">BLK_IG-FF_MODE.D[6]-&gt;BEL_FF-SB_FF[6]-D</port>
+				</inputs>
+				<outputs>
+					<port name="Q">SB_DFFSR[0].Q[0]-&gt;BEL_FF-SB_FF-Q</port>
+				</outputs>
+				<clocks>
+					<port name="C">BLK_IG-FF_MODE.C[0]-&gt;BEL_FF-SB_FF[6]-C</port>
+				</clocks>
+				<block name="$auto$simplemap.cc:420:simplemap_dff$79" instance="SB_DFFSR[0]">
+					<attributes>
+						<attribute name="src">"SymbiFlow/symbiflow-arch-defs/env/conda/bin/../share/yosys/ice40/cells_map.v:2"</attribute>
+					</attributes>
+					<parameters />
+					<inputs>
+						<port name="R">BEL_FF-SB_FF.S[0]-&gt;SB_DFFSR-R</port>
+						<port name="D">BEL_FF-SB_FF.D[0]-&gt;SB_DFFSR-D</port>
+					</inputs>
+					<outputs>
+						<port name="Q">counter[6]</port>
+					</outputs>
+					<clocks>
+						<port name="C">BEL_FF-SB_FF.C[0]-&gt;SB_DFFSR-C</port>
+					</clocks>
+				</block>
+			</block>
+			<block name="$auto$simplemap.cc:420:simplemap_dff$80" instance="BEL_FF-SB_FF[7]" mode="SB_DFFSR">
+				<inputs>
+					<port name="S">BLK_IG-FF_MODE.S[0]-&gt;BEL_FF-SB_FF[7]-S</port>
+					<port name="R">open</port>
+					<port name="D">BLK_IG-FF_MODE.D[7]-&gt;BEL_FF-SB_FF[7]-D</port>
+				</inputs>
+				<outputs>
+					<port name="Q">SB_DFFSR[0].Q[0]-&gt;BEL_FF-SB_FF-Q</port>
+				</outputs>
+				<clocks>
+					<port name="C">BLK_IG-FF_MODE.C[0]-&gt;BEL_FF-SB_FF[7]-C</port>
+				</clocks>
+				<block name="$auto$simplemap.cc:420:simplemap_dff$80" instance="SB_DFFSR[0]">
+					<attributes>
+						<attribute name="src">"SymbiFlow/symbiflow-arch-defs/env/conda/bin/../share/yosys/ice40/cells_map.v:2"</attribute>
+					</attributes>
+					<parameters />
+					<inputs>
+						<port name="R">BEL_FF-SB_FF.S[0]-&gt;SB_DFFSR-R</port>
+						<port name="D">BEL_FF-SB_FF.D[0]-&gt;SB_DFFSR-D</port>
+					</inputs>
+					<outputs>
+						<port name="Q">counter[7]</port>
+					</outputs>
+					<clocks>
+						<port name="C">BEL_FF-SB_FF.C[0]-&gt;SB_DFFSR-C</port>
+					</clocks>
+				</block>
+			</block>
+		</block>
+		<block name="$auto$alumacc.cc:474:replace_alu$9.slice[6].carry" instance="SB_CARRY[0]">
+			<attributes>
+				<attribute name="src">"SymbiFlow/symbiflow-arch-defs/env/conda/bin/../share/yosys/ice40/arith_map.v:47"</attribute>
+			</attributes>
+			<parameters />
+			<inputs>
+				<port name="I1">BLK_TL-PLB.lutff_0/in[2]-&gt;SB_CARRY[0]-I1</port>
+				<port name="CI">BLK_TL-PLB.lutff_0/in[3]-&gt;SB_CARRY[0]-CI</port>
+				<port name="I0">BLK_TL-PLB.lutff_0/in[1]-&gt;SB_CARRY[0]-I0</port>
+			</inputs>
+			<outputs>
+				<port name="CO">$abc$340$n29</port>
+			</outputs>
+			<clocks />
+		</block>
+		<block name="open" instance="SB_CARRY[1]" />
+		<block name="open" instance="SB_CARRY[2]" />
+		<block name="open" instance="SB_CARRY[3]" />
+		<block name="open" instance="SB_CARRY[4]" />
+		<block name="open" instance="SB_CARRY[5]" />
+		<block name="open" instance="SB_CARRY[6]" />
+		<block name="open" instance="SB_CARRY[7]" />
+	</block>
+	<block name="$auto$alumacc.cc:474:replace_alu$9.slice[5].carry" instance="BLK_TL-PLB[1]" mode="default">
+		<inputs>
+			<port name="lutff_0/in">open $false counter[5] $abc$340$n21</port>
+			<port name="lutff_1/in">open open open open</port>
+			<port name="lutff_2/in">open open open open</port>
+			<port name="lutff_3/in">open open open open</port>
+			<port name="lutff_4/in">open open open open</port>
+			<port name="lutff_5/in">open open open open</port>
+			<port name="lutff_6/in">open open open open</port>
+			<port name="lutff_7/in">open open counter[1] open</port>
+			<port name="lutff_global/cen">$abc$154$n2</port>
+			<port name="lutff_global/s_r">rst</port>
+			<port name="FCIN">open</port>
+		</inputs>
+		<outputs>
+			<port name="lutff_0/out">open</port>
+			<port name="lutff_1/out">BLK_IG-LUT4[1].out[0]-&gt;BLK_TL-PLB-lutff_1/out</port>
+			<port name="lutff_2/out">open</port>
+			<port name="lutff_3/out">open</port>
+			<port name="lutff_4/out">open</port>
+			<port name="lutff_5/out">open</port>
+			<port name="lutff_6/out">open</port>
+			<port name="lutff_7/out">BLK_IG-FF_MODE[0].Q[7]-&gt;BLK_TL-PLB-lutff_7/out</port>
+			<port name="FCOUT">open</port>
+		</outputs>
+		<clocks>
+			<port name="lutff_global/clk">clk</port>
+		</clocks>
+		<block name="open" instance="BLK_IG-LUT4[0]" />
+		<block name="open" instance="BLK_IG-LUT4[1]" mode="wire" pb_type_num_modes="2">
+			<inputs>
+				<port name="in">open open open SB_CARRY[0].CO[0]-&gt;BLK_IG-LUT4[1].in[3]-CARRY</port>
+			</inputs>
+			<outputs>
+				<port name="out">BLK_IG-LUT4[1].in[3]-&gt;complete:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+		</block>
+		<block name="open" instance="BLK_IG-LUT4[2]" />
+		<block name="open" instance="BLK_IG-LUT4[3]" />
+		<block name="open" instance="BLK_IG-LUT4[4]" />
+		<block name="open" instance="BLK_IG-LUT4[5]" />
+		<block name="open" instance="BLK_IG-LUT4[6]" />
+		<block name="$abc$154$n4" instance="BLK_IG-LUT4[7]" mode="BLK_IG-LUT4">
+			<inputs>
+				<port name="in">open open BLK_TL-PLB.lutff_7/in[2]-&gt;BLK_IG-LUT4[7].in[2] open</port>
+			</inputs>
+			<outputs>
+				<port name="out">lut[0].out[0]-&gt;direct:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+			<block name="$abc$154$n4" instance="lut[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="in">open open BLK_IG-LUT4.in[2]-&gt;direct:BLK_IG-LUT4 open</port>
+					<port_rotation_map name="in">open open 0 open</port_rotation_map>
+				</inputs>
+				<outputs>
+					<port name="out">$abc$154$n4</port>
+				</outputs>
+				<clocks />
+			</block>
+		</block>
+		<block name="$auto$simplemap.cc:420:simplemap_dff$74" instance="BLK_IG-FF_MODE[0]" mode="PCLK+CEN+SR">
+			<inputs>
+				<port name="E">BLK_TL-PLB.lutff_global/cen[0]-&gt;BLK_IG-FF_MODE-E</port>
+				<port name="S">open</port>
+				<port name="R">BLK_TL-PLB.lutff_global/s_r[0]-&gt;BLK_IG-FF_MODE-R</port>
+				<port name="D">open open open open open open open BLK_IG-LUT4[7].out[0]-&gt;BLK_IG-FF_MODE-D[7]</port>
+			</inputs>
+			<outputs>
+				<port name="Q">open open open open open open open BEL_FF-SB_FF[7].Q[0]-&gt;BLK_IG-FF_MODE-Q[7]</port>
+			</outputs>
+			<clocks>
+				<port name="C">BLK_TL-PLB.lutff_global/clk[0]-&gt;BLK_IG-FF_MODE-C</port>
+			</clocks>
+			<block name="open" instance="BEL_FF-SB_FF[0]" />
+			<block name="open" instance="BEL_FF-SB_FF[1]" />
+			<block name="open" instance="BEL_FF-SB_FF[2]" />
+			<block name="open" instance="BEL_FF-SB_FF[3]" />
+			<block name="open" instance="BEL_FF-SB_FF[4]" />
+			<block name="open" instance="BEL_FF-SB_FF[5]" />
+			<block name="open" instance="BEL_FF-SB_FF[6]" />
+			<block name="$auto$simplemap.cc:420:simplemap_dff$74" instance="BEL_FF-SB_FF[7]" mode="SB_DFFESR">
+				<inputs>
+					<port name="E">BLK_IG-FF_MODE.E[0]-&gt;BEL_FF-SB_FF[7]-E</port>
+					<port name="S">open</port>
+					<port name="R">BLK_IG-FF_MODE.R[0]-&gt;BEL_FF-SB_FF[7]-R</port>
+					<port name="D">BLK_IG-FF_MODE.D[7]-&gt;BEL_FF-SB_FF[7]-D</port>
+				</inputs>
+				<outputs>
+					<port name="Q">SB_DFFESR[0].Q[0]-&gt;BEL_FF-SB_FF-Q</port>
+				</outputs>
+				<clocks>
+					<port name="C">BLK_IG-FF_MODE.C[0]-&gt;BEL_FF-SB_FF[7]-C</port>
+				</clocks>
+				<block name="$auto$simplemap.cc:420:simplemap_dff$74" instance="SB_DFFESR[0]">
+					<attributes>
+						<attribute name="src">"SymbiFlow/symbiflow-arch-defs/env/conda/bin/../share/yosys/ice40/cells_map.v:8"</attribute>
+					</attributes>
+					<parameters />
+					<inputs>
+						<port name="E">BEL_FF-SB_FF.E[0]-&gt;SB_DFFESR-E</port>
+						<port name="R">BEL_FF-SB_FF.R[0]-&gt;SB_DFFESR-R</port>
+						<port name="D">BEL_FF-SB_FF.D[0]-&gt;SB_DFFESR-D</port>
+					</inputs>
+					<outputs>
+						<port name="Q">counter[1]</port>
+					</outputs>
+					<clocks>
+						<port name="C">BEL_FF-SB_FF.C[0]-&gt;SB_DFFESR-C</port>
+					</clocks>
+				</block>
+			</block>
+		</block>
+		<block name="$auto$alumacc.cc:474:replace_alu$9.slice[5].carry" instance="SB_CARRY[0]">
+			<attributes>
+				<attribute name="src">"SymbiFlow/symbiflow-arch-defs/env/conda/bin/../share/yosys/ice40/arith_map.v:47"</attribute>
+			</attributes>
+			<parameters />
+			<inputs>
+				<port name="I1">BLK_TL-PLB.lutff_0/in[2]-&gt;SB_CARRY[0]-I1</port>
+				<port name="CI">BLK_TL-PLB.lutff_0/in[3]-&gt;SB_CARRY[0]-CI</port>
+				<port name="I0">BLK_TL-PLB.lutff_0/in[1]-&gt;SB_CARRY[0]-I0</port>
+			</inputs>
+			<outputs>
+				<port name="CO">$abc$340$n25</port>
+			</outputs>
+			<clocks />
+		</block>
+		<block name="open" instance="SB_CARRY[1]" />
+		<block name="open" instance="SB_CARRY[2]" />
+		<block name="open" instance="SB_CARRY[3]" />
+		<block name="open" instance="SB_CARRY[4]" />
+		<block name="open" instance="SB_CARRY[5]" />
+		<block name="open" instance="SB_CARRY[6]" />
+		<block name="open" instance="SB_CARRY[7]" />
+	</block>
+	<block name="$auto$alumacc.cc:474:replace_alu$9.slice[4].carry" instance="BLK_TL-PLB[2]" mode="default">
+		<inputs>
+			<port name="lutff_0/in">open $false counter[4] $abc$340$n17</port>
+			<port name="lutff_1/in">open open open open</port>
+			<port name="lutff_2/in">open open open open</port>
+			<port name="lutff_3/in">open open open open</port>
+			<port name="lutff_4/in">open open open open</port>
+			<port name="lutff_5/in">$abc$340$n9 open counter[2] open</port>
+			<port name="lutff_6/in">open counter[3] open $abc$340$n13</port>
+			<port name="lutff_7/in">open $abc$340$n17 counter[4] open</port>
+			<port name="lutff_global/cen">open</port>
+			<port name="lutff_global/s_r">rst</port>
+			<port name="FCIN">open</port>
+		</inputs>
+		<outputs>
+			<port name="lutff_0/out">open</port>
+			<port name="lutff_1/out">BLK_IG-LUT4[1].out[0]-&gt;BLK_TL-PLB-lutff_1/out</port>
+			<port name="lutff_2/out">open</port>
+			<port name="lutff_3/out">open</port>
+			<port name="lutff_4/out">open</port>
+			<port name="lutff_5/out">BLK_IG-FF_MODE[0].Q[5]-&gt;BLK_TL-PLB-lutff_5/out</port>
+			<port name="lutff_6/out">BLK_IG-FF_MODE[0].Q[6]-&gt;BLK_TL-PLB-lutff_6/out</port>
+			<port name="lutff_7/out">BLK_IG-FF_MODE[0].Q[7]-&gt;BLK_TL-PLB-lutff_7/out</port>
+			<port name="FCOUT">open</port>
+		</outputs>
+		<clocks>
+			<port name="lutff_global/clk">clk</port>
+		</clocks>
+		<block name="open" instance="BLK_IG-LUT4[0]" />
+		<block name="open" instance="BLK_IG-LUT4[1]" mode="wire" pb_type_num_modes="2">
+			<inputs>
+				<port name="in">open open open SB_CARRY[0].CO[0]-&gt;BLK_IG-LUT4[1].in[3]-CARRY</port>
+			</inputs>
+			<outputs>
+				<port name="out">BLK_IG-LUT4[1].in[3]-&gt;complete:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+		</block>
+		<block name="open" instance="BLK_IG-LUT4[2]" />
+		<block name="open" instance="BLK_IG-LUT4[3]" />
+		<block name="open" instance="BLK_IG-LUT4[4]" />
+		<block name="$abc$340$n10" instance="BLK_IG-LUT4[5]" mode="BLK_IG-LUT4">
+			<inputs>
+				<port name="in">BLK_TL-PLB.lutff_5/in[0]-&gt;BLK_IG-LUT4[5]-in[0] open BLK_TL-PLB.lutff_5/in[2]-&gt;BLK_IG-LUT4[5].in[2] open</port>
+			</inputs>
+			<outputs>
+				<port name="out">lut[0].out[0]-&gt;direct:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+			<block name="$abc$340$n10" instance="lut[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="in">BLK_IG-LUT4.in[0]-&gt;direct:BLK_IG-LUT4 open BLK_IG-LUT4.in[2]-&gt;direct:BLK_IG-LUT4 open</port>
+					<port_rotation_map name="in">0 open 1 open</port_rotation_map>
+				</inputs>
+				<outputs>
+					<port name="out">$abc$340$n10</port>
+				</outputs>
+				<clocks />
+			</block>
+		</block>
+		<block name="$abc$340$n14" instance="BLK_IG-LUT4[6]" mode="BLK_IG-LUT4">
+			<inputs>
+				<port name="in">open BLK_TL-PLB.lutff_6/in[1]-&gt;BLK_IG-LUT4[6]-in[1] open BLK_TL-PLB.lutff_6/in[3]-&gt;BLK_IG-LUT4[6].in[3]</port>
+			</inputs>
+			<outputs>
+				<port name="out">lut[0].out[0]-&gt;direct:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+			<block name="$abc$340$n14" instance="lut[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="in">open BLK_IG-LUT4.in[1]-&gt;direct:BLK_IG-LUT4 open BLK_IG-LUT4.in[3]-&gt;direct:BLK_IG-LUT4</port>
+					<port_rotation_map name="in">open 1 open 0</port_rotation_map>
+				</inputs>
+				<outputs>
+					<port name="out">$abc$340$n14</port>
+				</outputs>
+				<clocks />
+			</block>
+		</block>
+		<block name="$abc$340$n18" instance="BLK_IG-LUT4[7]" mode="BLK_IG-LUT4">
+			<inputs>
+				<port name="in">open BLK_TL-PLB.lutff_7/in[1]-&gt;BLK_IG-LUT4[7]-in[1] BLK_TL-PLB.lutff_7/in[2]-&gt;BLK_IG-LUT4[7].in[2] open</port>
+			</inputs>
+			<outputs>
+				<port name="out">lut[0].out[0]-&gt;direct:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+			<block name="$abc$340$n18" instance="lut[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="in">open BLK_IG-LUT4.in[1]-&gt;direct:BLK_IG-LUT4 BLK_IG-LUT4.in[2]-&gt;direct:BLK_IG-LUT4 open</port>
+					<port_rotation_map name="in">open 0 1 open</port_rotation_map>
+				</inputs>
+				<outputs>
+					<port name="out">$abc$340$n18</port>
+				</outputs>
+				<clocks />
+			</block>
+		</block>
+		<block name="$auto$simplemap.cc:420:simplemap_dff$77" instance="BLK_IG-FF_MODE[0]" mode="PCLK+SR">
+			<inputs>
+				<port name="E">open</port>
+				<port name="S">BLK_TL-PLB.lutff_global/s_r[0]-&gt;BLK_IG-FF_MODE-S</port>
+				<port name="R">open</port>
+				<port name="D">open open open open open BLK_IG-LUT4[5].out[0]-&gt;BLK_IG-FF_MODE-D[5] BLK_IG-LUT4[6].out[0]-&gt;BLK_IG-FF_MODE-D[6] BLK_IG-LUT4[7].out[0]-&gt;BLK_IG-FF_MODE-D[7]</port>
+			</inputs>
+			<outputs>
+				<port name="Q">open open open open open BEL_FF-SB_FF[5].Q[0]-&gt;BLK_IG-FF_MODE-Q[5] BEL_FF-SB_FF[6].Q[0]-&gt;BLK_IG-FF_MODE-Q[6] BEL_FF-SB_FF[7].Q[0]-&gt;BLK_IG-FF_MODE-Q[7]</port>
+			</outputs>
+			<clocks>
+				<port name="C">BLK_TL-PLB.lutff_global/clk[0]-&gt;BLK_IG-FF_MODE-C</port>
+			</clocks>
+			<block name="open" instance="BEL_FF-SB_FF[0]" />
+			<block name="open" instance="BEL_FF-SB_FF[1]" />
+			<block name="open" instance="BEL_FF-SB_FF[2]" />
+			<block name="open" instance="BEL_FF-SB_FF[3]" />
+			<block name="open" instance="BEL_FF-SB_FF[4]" />
+			<block name="$auto$simplemap.cc:420:simplemap_dff$75" instance="BEL_FF-SB_FF[5]" mode="SB_DFFSR">
+				<inputs>
+					<port name="S">BLK_IG-FF_MODE.S[0]-&gt;BEL_FF-SB_FF[5]-S</port>
+					<port name="R">open</port>
+					<port name="D">BLK_IG-FF_MODE.D[5]-&gt;BEL_FF-SB_FF[5]-D</port>
+				</inputs>
+				<outputs>
+					<port name="Q">SB_DFFSR[0].Q[0]-&gt;BEL_FF-SB_FF-Q</port>
+				</outputs>
+				<clocks>
+					<port name="C">BLK_IG-FF_MODE.C[0]-&gt;BEL_FF-SB_FF[5]-C</port>
+				</clocks>
+				<block name="$auto$simplemap.cc:420:simplemap_dff$75" instance="SB_DFFSR[0]">
+					<attributes>
+						<attribute name="src">"SymbiFlow/symbiflow-arch-defs/env/conda/bin/../share/yosys/ice40/cells_map.v:2"</attribute>
+					</attributes>
+					<parameters />
+					<inputs>
+						<port name="R">BEL_FF-SB_FF.S[0]-&gt;SB_DFFSR-R</port>
+						<port name="D">BEL_FF-SB_FF.D[0]-&gt;SB_DFFSR-D</port>
+					</inputs>
+					<outputs>
+						<port name="Q">counter[2]</port>
+					</outputs>
+					<clocks>
+						<port name="C">BEL_FF-SB_FF.C[0]-&gt;SB_DFFSR-C</port>
+					</clocks>
+				</block>
+			</block>
+			<block name="$auto$simplemap.cc:420:simplemap_dff$76" instance="BEL_FF-SB_FF[6]" mode="SB_DFFSR">
+				<inputs>
+					<port name="S">BLK_IG-FF_MODE.S[0]-&gt;BEL_FF-SB_FF[6]-S</port>
+					<port name="R">open</port>
+					<port name="D">BLK_IG-FF_MODE.D[6]-&gt;BEL_FF-SB_FF[6]-D</port>
+				</inputs>
+				<outputs>
+					<port name="Q">SB_DFFSR[0].Q[0]-&gt;BEL_FF-SB_FF-Q</port>
+				</outputs>
+				<clocks>
+					<port name="C">BLK_IG-FF_MODE.C[0]-&gt;BEL_FF-SB_FF[6]-C</port>
+				</clocks>
+				<block name="$auto$simplemap.cc:420:simplemap_dff$76" instance="SB_DFFSR[0]">
+					<attributes>
+						<attribute name="src">"SymbiFlow/symbiflow-arch-defs/env/conda/bin/../share/yosys/ice40/cells_map.v:2"</attribute>
+					</attributes>
+					<parameters />
+					<inputs>
+						<port name="R">BEL_FF-SB_FF.S[0]-&gt;SB_DFFSR-R</port>
+						<port name="D">BEL_FF-SB_FF.D[0]-&gt;SB_DFFSR-D</port>
+					</inputs>
+					<outputs>
+						<port name="Q">counter[3]</port>
+					</outputs>
+					<clocks>
+						<port name="C">BEL_FF-SB_FF.C[0]-&gt;SB_DFFSR-C</port>
+					</clocks>
+				</block>
+			</block>
+			<block name="$auto$simplemap.cc:420:simplemap_dff$77" instance="BEL_FF-SB_FF[7]" mode="SB_DFFSR">
+				<inputs>
+					<port name="S">BLK_IG-FF_MODE.S[0]-&gt;BEL_FF-SB_FF[7]-S</port>
+					<port name="R">open</port>
+					<port name="D">BLK_IG-FF_MODE.D[7]-&gt;BEL_FF-SB_FF[7]-D</port>
+				</inputs>
+				<outputs>
+					<port name="Q">SB_DFFSR[0].Q[0]-&gt;BEL_FF-SB_FF-Q</port>
+				</outputs>
+				<clocks>
+					<port name="C">BLK_IG-FF_MODE.C[0]-&gt;BEL_FF-SB_FF[7]-C</port>
+				</clocks>
+				<block name="$auto$simplemap.cc:420:simplemap_dff$77" instance="SB_DFFSR[0]">
+					<attributes>
+						<attribute name="src">"SymbiFlow/symbiflow-arch-defs/env/conda/bin/../share/yosys/ice40/cells_map.v:2"</attribute>
+					</attributes>
+					<parameters />
+					<inputs>
+						<port name="R">BEL_FF-SB_FF.S[0]-&gt;SB_DFFSR-R</port>
+						<port name="D">BEL_FF-SB_FF.D[0]-&gt;SB_DFFSR-D</port>
+					</inputs>
+					<outputs>
+						<port name="Q">counter[4]</port>
+					</outputs>
+					<clocks>
+						<port name="C">BEL_FF-SB_FF.C[0]-&gt;SB_DFFSR-C</port>
+					</clocks>
+				</block>
+			</block>
+		</block>
+		<block name="$auto$alumacc.cc:474:replace_alu$9.slice[4].carry" instance="SB_CARRY[0]">
+			<attributes>
+				<attribute name="src">"SymbiFlow/symbiflow-arch-defs/env/conda/bin/../share/yosys/ice40/arith_map.v:47"</attribute>
+			</attributes>
+			<parameters />
+			<inputs>
+				<port name="I1">BLK_TL-PLB.lutff_0/in[2]-&gt;SB_CARRY[0]-I1</port>
+				<port name="CI">BLK_TL-PLB.lutff_0/in[3]-&gt;SB_CARRY[0]-CI</port>
+				<port name="I0">BLK_TL-PLB.lutff_0/in[1]-&gt;SB_CARRY[0]-I0</port>
+			</inputs>
+			<outputs>
+				<port name="CO">$abc$340$n21</port>
+			</outputs>
+			<clocks />
+		</block>
+		<block name="open" instance="SB_CARRY[1]" />
+		<block name="open" instance="SB_CARRY[2]" />
+		<block name="open" instance="SB_CARRY[3]" />
+		<block name="open" instance="SB_CARRY[4]" />
+		<block name="open" instance="SB_CARRY[5]" />
+		<block name="open" instance="SB_CARRY[6]" />
+		<block name="open" instance="SB_CARRY[7]" />
+	</block>
+	<block name="$auto$alumacc.cc:474:replace_alu$9.slice[3].carry" instance="BLK_TL-PLB[3]" mode="default">
+		<inputs>
+			<port name="lutff_0/in">open $false counter[3] $abc$340$n13</port>
+			<port name="lutff_1/in">open open open open</port>
+			<port name="lutff_2/in">open open open open</port>
+			<port name="lutff_3/in">open open open open</port>
+			<port name="lutff_4/in">open open open open</port>
+			<port name="lutff_5/in">open open open open</port>
+			<port name="lutff_6/in">open open open open</port>
+			<port name="lutff_7/in">open open open open</port>
+			<port name="lutff_global/cen">open</port>
+			<port name="lutff_global/s_r">open</port>
+			<port name="FCIN">open</port>
+		</inputs>
+		<outputs>
+			<port name="lutff_0/out">open</port>
+			<port name="lutff_1/out">BLK_IG-LUT4[1].out[0]-&gt;BLK_TL-PLB-lutff_1/out</port>
+			<port name="lutff_2/out">open</port>
+			<port name="lutff_3/out">open</port>
+			<port name="lutff_4/out">open</port>
+			<port name="lutff_5/out">open</port>
+			<port name="lutff_6/out">open</port>
+			<port name="lutff_7/out">open</port>
+			<port name="FCOUT">open</port>
+		</outputs>
+		<clocks>
+			<port name="lutff_global/clk">open</port>
+		</clocks>
+		<block name="open" instance="BLK_IG-LUT4[0]" />
+		<block name="open" instance="BLK_IG-LUT4[1]" mode="wire" pb_type_num_modes="2">
+			<inputs>
+				<port name="in">open open open SB_CARRY[0].CO[0]-&gt;BLK_IG-LUT4[1].in[3]-CARRY</port>
+			</inputs>
+			<outputs>
+				<port name="out">BLK_IG-LUT4[1].in[3]-&gt;complete:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+		</block>
+		<block name="open" instance="BLK_IG-LUT4[2]" />
+		<block name="open" instance="BLK_IG-LUT4[3]" />
+		<block name="open" instance="BLK_IG-LUT4[4]" />
+		<block name="open" instance="BLK_IG-LUT4[5]" />
+		<block name="open" instance="BLK_IG-LUT4[6]" />
+		<block name="open" instance="BLK_IG-LUT4[7]" />
+		<block name="open" instance="BLK_IG-FF_MODE[0]" />
+		<block name="$auto$alumacc.cc:474:replace_alu$9.slice[3].carry" instance="SB_CARRY[0]">
+			<attributes>
+				<attribute name="src">"SymbiFlow/symbiflow-arch-defs/env/conda/bin/../share/yosys/ice40/arith_map.v:47"</attribute>
+			</attributes>
+			<parameters />
+			<inputs>
+				<port name="I1">BLK_TL-PLB.lutff_0/in[2]-&gt;SB_CARRY[0]-I1</port>
+				<port name="CI">BLK_TL-PLB.lutff_0/in[3]-&gt;SB_CARRY[0]-CI</port>
+				<port name="I0">BLK_TL-PLB.lutff_0/in[1]-&gt;SB_CARRY[0]-I0</port>
+			</inputs>
+			<outputs>
+				<port name="CO">$abc$340$n17</port>
+			</outputs>
+			<clocks />
+		</block>
+		<block name="open" instance="SB_CARRY[1]" />
+		<block name="open" instance="SB_CARRY[2]" />
+		<block name="open" instance="SB_CARRY[3]" />
+		<block name="open" instance="SB_CARRY[4]" />
+		<block name="open" instance="SB_CARRY[5]" />
+		<block name="open" instance="SB_CARRY[6]" />
+		<block name="open" instance="SB_CARRY[7]" />
+	</block>
+	<block name="$auto$alumacc.cc:474:replace_alu$9.slice[2].carry" instance="BLK_TL-PLB[4]" mode="default">
+		<inputs>
+			<port name="lutff_0/in">open $false counter[2] $abc$340$n9</port>
+			<port name="lutff_1/in">open open open open</port>
+			<port name="lutff_2/in">open open open open</port>
+			<port name="lutff_3/in">open open open open</port>
+			<port name="lutff_4/in">open open open open</port>
+			<port name="lutff_5/in">open open open open</port>
+			<port name="lutff_6/in">open open open open</port>
+			<port name="lutff_7/in">open open open open</port>
+			<port name="lutff_global/cen">open</port>
+			<port name="lutff_global/s_r">open</port>
+			<port name="FCIN">open</port>
+		</inputs>
+		<outputs>
+			<port name="lutff_0/out">open</port>
+			<port name="lutff_1/out">BLK_IG-LUT4[1].out[0]-&gt;BLK_TL-PLB-lutff_1/out</port>
+			<port name="lutff_2/out">open</port>
+			<port name="lutff_3/out">open</port>
+			<port name="lutff_4/out">open</port>
+			<port name="lutff_5/out">open</port>
+			<port name="lutff_6/out">open</port>
+			<port name="lutff_7/out">open</port>
+			<port name="FCOUT">open</port>
+		</outputs>
+		<clocks>
+			<port name="lutff_global/clk">open</port>
+		</clocks>
+		<block name="open" instance="BLK_IG-LUT4[0]" />
+		<block name="open" instance="BLK_IG-LUT4[1]" mode="wire" pb_type_num_modes="2">
+			<inputs>
+				<port name="in">open open open SB_CARRY[0].CO[0]-&gt;BLK_IG-LUT4[1].in[3]-CARRY</port>
+			</inputs>
+			<outputs>
+				<port name="out">BLK_IG-LUT4[1].in[3]-&gt;complete:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+		</block>
+		<block name="open" instance="BLK_IG-LUT4[2]" />
+		<block name="open" instance="BLK_IG-LUT4[3]" />
+		<block name="open" instance="BLK_IG-LUT4[4]" />
+		<block name="open" instance="BLK_IG-LUT4[5]" />
+		<block name="open" instance="BLK_IG-LUT4[6]" />
+		<block name="open" instance="BLK_IG-LUT4[7]" />
+		<block name="open" instance="BLK_IG-FF_MODE[0]" />
+		<block name="$auto$alumacc.cc:474:replace_alu$9.slice[2].carry" instance="SB_CARRY[0]">
+			<attributes>
+				<attribute name="src">"SymbiFlow/symbiflow-arch-defs/env/conda/bin/../share/yosys/ice40/arith_map.v:47"</attribute>
+			</attributes>
+			<parameters />
+			<inputs>
+				<port name="I1">BLK_TL-PLB.lutff_0/in[2]-&gt;SB_CARRY[0]-I1</port>
+				<port name="CI">BLK_TL-PLB.lutff_0/in[3]-&gt;SB_CARRY[0]-CI</port>
+				<port name="I0">BLK_TL-PLB.lutff_0/in[1]-&gt;SB_CARRY[0]-I0</port>
+			</inputs>
+			<outputs>
+				<port name="CO">$abc$340$n13</port>
+			</outputs>
+			<clocks />
+		</block>
+		<block name="open" instance="SB_CARRY[1]" />
+		<block name="open" instance="SB_CARRY[2]" />
+		<block name="open" instance="SB_CARRY[3]" />
+		<block name="open" instance="SB_CARRY[4]" />
+		<block name="open" instance="SB_CARRY[5]" />
+		<block name="open" instance="SB_CARRY[6]" />
+		<block name="open" instance="SB_CARRY[7]" />
+	</block>
+	<block name="$auto$alumacc.cc:474:replace_alu$9.slice[1].carry" instance="BLK_TL-PLB[5]" mode="default">
+		<inputs>
+			<port name="lutff_0/in">open $false counter[1] counter[0]</port>
+			<port name="lutff_1/in">open open open open</port>
+			<port name="lutff_2/in">open open open open</port>
+			<port name="lutff_3/in">open open open open</port>
+			<port name="lutff_4/in">open open open open</port>
+			<port name="lutff_5/in">open open open open</port>
+			<port name="lutff_6/in">open open open open</port>
+			<port name="lutff_7/in">open open open open</port>
+			<port name="lutff_global/cen">open</port>
+			<port name="lutff_global/s_r">open</port>
+			<port name="FCIN">open</port>
+		</inputs>
+		<outputs>
+			<port name="lutff_0/out">open</port>
+			<port name="lutff_1/out">BLK_IG-LUT4[1].out[0]-&gt;BLK_TL-PLB-lutff_1/out</port>
+			<port name="lutff_2/out">open</port>
+			<port name="lutff_3/out">open</port>
+			<port name="lutff_4/out">open</port>
+			<port name="lutff_5/out">open</port>
+			<port name="lutff_6/out">open</port>
+			<port name="lutff_7/out">open</port>
+			<port name="FCOUT">open</port>
+		</outputs>
+		<clocks>
+			<port name="lutff_global/clk">open</port>
+		</clocks>
+		<block name="open" instance="BLK_IG-LUT4[0]" />
+		<block name="open" instance="BLK_IG-LUT4[1]" mode="wire" pb_type_num_modes="2">
+			<inputs>
+				<port name="in">open open open SB_CARRY[0].CO[0]-&gt;BLK_IG-LUT4[1].in[3]-CARRY</port>
+			</inputs>
+			<outputs>
+				<port name="out">BLK_IG-LUT4[1].in[3]-&gt;complete:BLK_IG-LUT4</port>
+			</outputs>
+			<clocks />
+		</block>
+		<block name="open" instance="BLK_IG-LUT4[2]" />
+		<block name="open" instance="BLK_IG-LUT4[3]" />
+		<block name="open" instance="BLK_IG-LUT4[4]" />
+		<block name="open" instance="BLK_IG-LUT4[5]" />
+		<block name="open" instance="BLK_IG-LUT4[6]" />
+		<block name="open" instance="BLK_IG-LUT4[7]" />
+		<block name="open" instance="BLK_IG-FF_MODE[0]" />
+		<block name="$auto$alumacc.cc:474:replace_alu$9.slice[1].carry" instance="SB_CARRY[0]">
+			<attributes>
+				<attribute name="src">"SymbiFlow/symbiflow-arch-defs/env/conda/bin/../share/yosys/ice40/arith_map.v:47"</attribute>
+			</attributes>
+			<parameters />
+			<inputs>
+				<port name="I1">BLK_TL-PLB.lutff_0/in[2]-&gt;SB_CARRY[0]-I1</port>
+				<port name="CI">BLK_TL-PLB.lutff_0/in[3]-&gt;SB_CARRY[0]-CI</port>
+				<port name="I0">BLK_TL-PLB.lutff_0/in[1]-&gt;SB_CARRY[0]-I0</port>
+			</inputs>
+			<outputs>
+				<port name="CO">$abc$340$n9</port>
+			</outputs>
+			<clocks />
+		</block>
+		<block name="open" instance="SB_CARRY[1]" />
+		<block name="open" instance="SB_CARRY[2]" />
+		<block name="open" instance="SB_CARRY[3]" />
+		<block name="open" instance="SB_CARRY[4]" />
+		<block name="open" instance="SB_CARRY[5]" />
+		<block name="open" instance="SB_CARRY[6]" />
+		<block name="open" instance="SB_CARRY[7]" />
+	</block>
+	<block name="out:counter[0]" instance="BLK_TL-PIO[6]" mode="PAD_IS_OUTPUT">
+		<inputs>
+			<port name="D_OUT">counter[0] open</port>
+			<port name="OUT_ENB">open</port>
+			<port name="CEN">open</port>
+			<port name="LATCH">open</port>
+		</inputs>
+		<outputs>
+			<port name="D_IN">open open</port>
+			<port name="PACKAGE_PIN">open</port>
+		</outputs>
+		<clocks>
+			<port name="INCLK">open</port>
+			<port name="OUTCLK">open</port>
+		</clocks>
+		<block name="out:counter[0]" instance="PAD[0]" mode="default">
+			<inputs>
+				<port name="D_OUT">BLK_TL-PIO.D_OUT[0]-&gt;PAD-D_OUT[0] open</port>
+			</inputs>
+			<outputs />
+			<clocks />
+			<block name="out:counter[0]" instance="output[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="outpad">PAD.D_OUT[0]-&gt;D_OUT</port>
+				</inputs>
+				<outputs />
+				<clocks />
+			</block>
+		</block>
+	</block>
+	<block name="out:counter[2]" instance="BLK_TL-PIO[7]" mode="PAD_IS_OUTPUT">
+		<inputs>
+			<port name="D_OUT">counter[2] open</port>
+			<port name="OUT_ENB">open</port>
+			<port name="CEN">open</port>
+			<port name="LATCH">open</port>
+		</inputs>
+		<outputs>
+			<port name="D_IN">open open</port>
+			<port name="PACKAGE_PIN">open</port>
+		</outputs>
+		<clocks>
+			<port name="INCLK">open</port>
+			<port name="OUTCLK">open</port>
+		</clocks>
+		<block name="out:counter[2]" instance="PAD[0]" mode="default">
+			<inputs>
+				<port name="D_OUT">BLK_TL-PIO.D_OUT[0]-&gt;PAD-D_OUT[0] open</port>
+			</inputs>
+			<outputs />
+			<clocks />
+			<block name="out:counter[2]" instance="output[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="outpad">PAD.D_OUT[0]-&gt;D_OUT</port>
+				</inputs>
+				<outputs />
+				<clocks />
+			</block>
+		</block>
+	</block>
+	<block name="out:counter[7]" instance="BLK_TL-PIO[8]" mode="PAD_IS_OUTPUT">
+		<inputs>
+			<port name="D_OUT">counter[7] open</port>
+			<port name="OUT_ENB">open</port>
+			<port name="CEN">open</port>
+			<port name="LATCH">open</port>
+		</inputs>
+		<outputs>
+			<port name="D_IN">open open</port>
+			<port name="PACKAGE_PIN">open</port>
+		</outputs>
+		<clocks>
+			<port name="INCLK">open</port>
+			<port name="OUTCLK">open</port>
+		</clocks>
+		<block name="out:counter[7]" instance="PAD[0]" mode="default">
+			<inputs>
+				<port name="D_OUT">BLK_TL-PIO.D_OUT[0]-&gt;PAD-D_OUT[0] open</port>
+			</inputs>
+			<outputs />
+			<clocks />
+			<block name="out:counter[7]" instance="output[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="outpad">PAD.D_OUT[0]-&gt;D_OUT</port>
+				</inputs>
+				<outputs />
+				<clocks />
+			</block>
+		</block>
+	</block>
+	<block name="out:counter[6]" instance="BLK_TL-PIO[9]" mode="PAD_IS_OUTPUT">
+		<inputs>
+			<port name="D_OUT">counter[6] open</port>
+			<port name="OUT_ENB">open</port>
+			<port name="CEN">open</port>
+			<port name="LATCH">open</port>
+		</inputs>
+		<outputs>
+			<port name="D_IN">open open</port>
+			<port name="PACKAGE_PIN">open</port>
+		</outputs>
+		<clocks>
+			<port name="INCLK">open</port>
+			<port name="OUTCLK">open</port>
+		</clocks>
+		<block name="out:counter[6]" instance="PAD[0]" mode="default">
+			<inputs>
+				<port name="D_OUT">BLK_TL-PIO.D_OUT[0]-&gt;PAD-D_OUT[0] open</port>
+			</inputs>
+			<outputs />
+			<clocks />
+			<block name="out:counter[6]" instance="output[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="outpad">PAD.D_OUT[0]-&gt;D_OUT</port>
+				</inputs>
+				<outputs />
+				<clocks />
+			</block>
+		</block>
+	</block>
+	<block name="out:counter[5]" instance="BLK_TL-PIO[10]" mode="PAD_IS_OUTPUT">
+		<inputs>
+			<port name="D_OUT">counter[5] open</port>
+			<port name="OUT_ENB">open</port>
+			<port name="CEN">open</port>
+			<port name="LATCH">open</port>
+		</inputs>
+		<outputs>
+			<port name="D_IN">open open</port>
+			<port name="PACKAGE_PIN">open</port>
+		</outputs>
+		<clocks>
+			<port name="INCLK">open</port>
+			<port name="OUTCLK">open</port>
+		</clocks>
+		<block name="out:counter[5]" instance="PAD[0]" mode="default">
+			<inputs>
+				<port name="D_OUT">BLK_TL-PIO.D_OUT[0]-&gt;PAD-D_OUT[0] open</port>
+			</inputs>
+			<outputs />
+			<clocks />
+			<block name="out:counter[5]" instance="output[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="outpad">PAD.D_OUT[0]-&gt;D_OUT</port>
+				</inputs>
+				<outputs />
+				<clocks />
+			</block>
+		</block>
+	</block>
+	<block name="out:counter[4]" instance="BLK_TL-PIO[11]" mode="PAD_IS_OUTPUT">
+		<inputs>
+			<port name="D_OUT">counter[4] open</port>
+			<port name="OUT_ENB">open</port>
+			<port name="CEN">open</port>
+			<port name="LATCH">open</port>
+		</inputs>
+		<outputs>
+			<port name="D_IN">open open</port>
+			<port name="PACKAGE_PIN">open</port>
+		</outputs>
+		<clocks>
+			<port name="INCLK">open</port>
+			<port name="OUTCLK">open</port>
+		</clocks>
+		<block name="out:counter[4]" instance="PAD[0]" mode="default">
+			<inputs>
+				<port name="D_OUT">BLK_TL-PIO.D_OUT[0]-&gt;PAD-D_OUT[0] open</port>
+			</inputs>
+			<outputs />
+			<clocks />
+			<block name="out:counter[4]" instance="output[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="outpad">PAD.D_OUT[0]-&gt;D_OUT</port>
+				</inputs>
+				<outputs />
+				<clocks />
+			</block>
+		</block>
+	</block>
+	<block name="out:counter[3]" instance="BLK_TL-PIO[12]" mode="PAD_IS_OUTPUT">
+		<inputs>
+			<port name="D_OUT">counter[3] open</port>
+			<port name="OUT_ENB">open</port>
+			<port name="CEN">open</port>
+			<port name="LATCH">open</port>
+		</inputs>
+		<outputs>
+			<port name="D_IN">open open</port>
+			<port name="PACKAGE_PIN">open</port>
+		</outputs>
+		<clocks>
+			<port name="INCLK">open</port>
+			<port name="OUTCLK">open</port>
+		</clocks>
+		<block name="out:counter[3]" instance="PAD[0]" mode="default">
+			<inputs>
+				<port name="D_OUT">BLK_TL-PIO.D_OUT[0]-&gt;PAD-D_OUT[0] open</port>
+			</inputs>
+			<outputs />
+			<clocks />
+			<block name="out:counter[3]" instance="output[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="outpad">PAD.D_OUT[0]-&gt;D_OUT</port>
+				</inputs>
+				<outputs />
+				<clocks />
+			</block>
+		</block>
+	</block>
+	<block name="out:counter[1]" instance="BLK_TL-PIO[13]" mode="PAD_IS_OUTPUT">
+		<inputs>
+			<port name="D_OUT">counter[1] open</port>
+			<port name="OUT_ENB">open</port>
+			<port name="CEN">open</port>
+			<port name="LATCH">open</port>
+		</inputs>
+		<outputs>
+			<port name="D_IN">open open</port>
+			<port name="PACKAGE_PIN">open</port>
+		</outputs>
+		<clocks>
+			<port name="INCLK">open</port>
+			<port name="OUTCLK">open</port>
+		</clocks>
+		<block name="out:counter[1]" instance="PAD[0]" mode="default">
+			<inputs>
+				<port name="D_OUT">BLK_TL-PIO.D_OUT[0]-&gt;PAD-D_OUT[0] open</port>
+			</inputs>
+			<outputs />
+			<clocks />
+			<block name="out:counter[1]" instance="output[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="outpad">PAD.D_OUT[0]-&gt;D_OUT</port>
+				</inputs>
+				<outputs />
+				<clocks />
+			</block>
+		</block>
+	</block>
+	<block name="clk" instance="BLK_TL-PIO[14]" mode="PAD_IS_INPUT">
+		<inputs>
+			<port name="D_OUT">open open</port>
+			<port name="OUT_ENB">open</port>
+			<port name="CEN">open</port>
+			<port name="LATCH">open</port>
+		</inputs>
+		<outputs>
+			<port name="D_IN">PAD[0].D_IN[0]-&gt;BLK_TL-PIO-D_IN[0] open</port>
+			<port name="PACKAGE_PIN">open</port>
+		</outputs>
+		<clocks>
+			<port name="INCLK">open</port>
+			<port name="OUTCLK">open</port>
+		</clocks>
+		<block name="clk" instance="PAD[0]" mode="default">
+			<inputs />
+			<outputs>
+				<port name="D_IN">input[0].inpad[0]-&gt;PAD-D_IN[0] open</port>
+				<port name="PIN">open</port>
+			</outputs>
+			<clocks />
+			<block name="clk" instance="input[0]">
+				<attributes />
+				<parameters />
+				<inputs />
+				<outputs>
+					<port name="inpad">clk</port>
+				</outputs>
+				<clocks />
+			</block>
+		</block>
+	</block>
+	<block name="rst" instance="BLK_TL-PIO[15]" mode="PAD_IS_INPUT">
+		<inputs>
+			<port name="D_OUT">open open</port>
+			<port name="OUT_ENB">open</port>
+			<port name="CEN">open</port>
+			<port name="LATCH">open</port>
+		</inputs>
+		<outputs>
+			<port name="D_IN">PAD[0].D_IN[0]-&gt;BLK_TL-PIO-D_IN[0] open</port>
+			<port name="PACKAGE_PIN">open</port>
+		</outputs>
+		<clocks>
+			<port name="INCLK">open</port>
+			<port name="OUTCLK">open</port>
+		</clocks>
+		<block name="rst" instance="PAD[0]" mode="default">
+			<inputs />
+			<outputs>
+				<port name="D_IN">input[0].inpad[0]-&gt;PAD-D_IN[0] open</port>
+				<port name="PIN">open</port>
+			</outputs>
+			<clocks />
+			<block name="rst" instance="input[0]">
+				<attributes />
+				<parameters />
+				<inputs />
+				<outputs>
+					<port name="inpad">rst</port>
+				</outputs>
+				<clocks />
+			</block>
+		</block>
+	</block>
+</block>

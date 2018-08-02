@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<block name="false_path_mux.net" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:6b269451035d2edcbedcd84d29f5e712ee869a7ddb171a568f402aaa72dd86d7" atom_netlist_id="SHA256:b602792560273bbf3edc0082bb48ed50b35bee8b57a8f24dbea20727031e5622">
+	<inputs>a b c sel</inputs>
+	<outputs>out:out</outputs>
+	<clocks></clocks>
+	<block name="out" instance="clb[0]" mode="default">
+		<inputs>
+			<port name="I">a sel c open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+		</inputs>
+		<outputs>
+			<port name="O">open open open open open open open open open open open open open open open open open open open fle[9].out[1]-&gt;clbouts2</port>
+		</outputs>
+		<clocks>
+			<port name="clk">open</port>
+		</clocks>
+		<block name="open" instance="fle[0]" />
+		<block name="open" instance="fle[1]" />
+		<block name="open" instance="fle[2]" />
+		<block name="open" instance="fle[3]" />
+		<block name="open" instance="fle[4]" />
+		<block name="open" instance="fle[5]" />
+		<block name="open" instance="fle[6]" />
+		<block name="open" instance="fle[7]" />
+		<block name="open" instance="fle[8]" />
+		<block name="out" instance="fle[9]" mode="n2_lut5">
+			<inputs>
+				<port name="in">open open clb.I[2]-&gt;crossbar clb.I[0]-&gt;crossbar clb.I[1]-&gt;crossbar open</port>
+			</inputs>
+			<outputs>
+				<port name="out">open lut5inter[0].out[1]-&gt;direct2</port>
+			</outputs>
+			<clocks>
+				<port name="clk">open</port>
+			</clocks>
+			<block name="out" instance="lut5inter[0]" mode="default">
+				<inputs>
+					<port name="in">open open fle.in[2]-&gt;direct1 fle.in[3]-&gt;direct1 fle.in[4]-&gt;direct1</port>
+				</inputs>
+				<outputs>
+					<port name="out">open ble5[1].out[0]-&gt;direct3</port>
+				</outputs>
+				<clocks>
+					<port name="clk">open</port>
+				</clocks>
+				<block name="open" instance="ble5[0]" />
+				<block name="out" instance="ble5[1]" mode="default">
+					<inputs>
+						<port name="in">open open lut5inter.in[2]-&gt;direct2 lut5inter.in[3]-&gt;direct2 lut5inter.in[4]-&gt;direct2</port>
+					</inputs>
+					<outputs>
+						<port name="out">lut5[0].out[0]-&gt;mux1</port>
+					</outputs>
+					<clocks>
+						<port name="clk">open</port>
+					</clocks>
+					<block name="out" instance="lut5[0]" mode="lut5">
+						<inputs>
+							<port name="in">open open ble5.in[2]-&gt;direct1 ble5.in[3]-&gt;direct1 ble5.in[4]-&gt;direct1</port>
+						</inputs>
+						<outputs>
+							<port name="out">lut[0].out[0]-&gt;direct:lut5</port>
+						</outputs>
+						<clocks />
+						<block name="out" instance="lut[0]">
+							<attributes />
+							<parameters />
+							<inputs>
+								<port name="in">open open lut5.in[2]-&gt;direct:lut5 lut5.in[3]-&gt;direct:lut5 lut5.in[4]-&gt;direct:lut5</port>
+								<port_rotation_map name="in">open open 0 1 2</port_rotation_map>
+							</inputs>
+							<outputs>
+								<port name="out">out</port>
+							</outputs>
+							<clocks />
+						</block>
+					</block>
+					<block name="open" instance="ff[0]" />
+				</block>
+			</block>
+		</block>
+	</block>
+	<block name="out:out" instance="io[1]" mode="outpad">
+		<inputs>
+			<port name="outpad">out</port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open</port>
+		</outputs>
+		<clocks>
+			<port name="clock">open</port>
+		</clocks>
+		<block name="out:out" instance="outpad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">io.outpad[0]-&gt;outpad</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="a" instance="io[2]" mode="inpad">
+		<inputs>
+			<port name="outpad">open</port>
+		</inputs>
+		<outputs>
+			<port name="inpad">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks>
+			<port name="clock">open</port>
+		</clocks>
+		<block name="a" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">a</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="b" instance="io[3]" mode="inpad">
+		<inputs>
+			<port name="outpad">open</port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open</port>
+		</outputs>
+		<clocks>
+			<port name="clock">open</port>
+		</clocks>
+		<block name="b" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">open</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="c" instance="io[4]" mode="inpad">
+		<inputs>
+			<port name="outpad">open</port>
+		</inputs>
+		<outputs>
+			<port name="inpad">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks>
+			<port name="clock">open</port>
+		</clocks>
+		<block name="c" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">c</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="sel" instance="io[5]" mode="inpad">
+		<inputs>
+			<port name="outpad">open</port>
+		</inputs>
+		<outputs>
+			<port name="inpad">inpad[0].inpad[0]-&gt;inpad</port>
+		</outputs>
+		<clocks>
+			<port name="clock">open</port>
+		</clocks>
+		<block name="sel" instance="inpad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">sel</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+</block>

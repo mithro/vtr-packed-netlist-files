@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+<block name="mlut.net" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:c48f3404a248664bdc41b980a47588eff48a7f621b33fe2cb59066f7266ee064" atom_netlist_id="SHA256:53582910be02999e6a50a3bbf106104ca6cdc8ce4ea4d2a6f5ebb824232a3606">
+	<inputs>I0 I1 I2 I3 I4 I5 I6</inputs>
+	<outputs>out:O1 out:O2 out:O3</outputs>
+	<clocks></clocks>
+	<block name="out:O1" instance="BLK_IG-OBUF[0]" mode="default">
+		<inputs>
+			<port name="O">O1</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:O1" instance="BLK_BB-OBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">BLK_IG-OBUF.O[0]-&gt;OBUF</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:O2" instance="BLK_IG-OBUF[1]" mode="default">
+		<inputs>
+			<port name="O">O2</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:O2" instance="BLK_BB-OBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">BLK_IG-OBUF.O[0]-&gt;OBUF</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:O3" instance="BLK_IG-OBUF[2]" mode="default">
+		<inputs>
+			<port name="O">O3</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:O3" instance="BLK_BB-OBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">BLK_IG-OBUF.O[0]-&gt;OBUF</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="O1" instance="BLK_TI-TILE[3]" mode="default">
+		<inputs>
+			<port name="IN">I1 open I0 I2 open I3</port>
+			<port name="CIN">open</port>
+		</inputs>
+		<outputs>
+			<port name="OUT">BLK_SI-LUTFF[0].O[0]-&gt;BLK_TI-TILE.OUT[0] open</port>
+			<port name="COUT">open</port>
+		</outputs>
+		<clocks>
+			<port name="CLK">open open</port>
+		</clocks>
+		<block name="open" instance="BLK_BB-CARRY[0]" />
+		<block name="O1" instance="BLK_SI-LUTFF[0]" mode="default">
+			<inputs>
+				<port name="I">BLK_TI-TILE.IN[0]-&gt;BEL_RX-IN0.I[0] BLK_TI-TILE.IN[3]-&gt;BEL_RX-IN1.I[1] BLK_TI-TILE.IN[2]-&gt;BEL_RX-IN2.I[2] BLK_TI-TILE.IN[5]-&gt;BEL_RX-IN3.I[3]</port>
+			</inputs>
+			<outputs>
+				<port name="O">BLK_IG-LUTFF[0].O[0]-&gt;BLK_SI-LUTFF.O</port>
+				<port name="LO">open</port>
+			</outputs>
+			<clocks>
+				<port name="C">open</port>
+			</clocks>
+			<block name="O1" instance="BLK_IG-LUTFF[0]" mode="default">
+				<inputs>
+					<port name="I">BLK_SI-LUTFF.I[0]-&gt;BLK_IG-LUTFF.I[0] BLK_SI-LUTFF.I[1]-&gt;BLK_IG-LUTFF.I[1] BLK_SI-LUTFF.I[2]-&gt;BLK_IG-LUTFF.I[2] BLK_SI-LUTFF.I[3]-&gt;BLK_IG-LUTFF.I[3]</port>
+				</inputs>
+				<outputs>
+					<port name="O">BEL_LT-LUT[0].out[0]-&gt;BLK_IG-LUTFF.O</port>
+					<port name="LO">open</port>
+				</outputs>
+				<clocks>
+					<port name="C">open</port>
+				</clocks>
+				<block name="open" instance="BEL_FF-FF[0]" />
+				<block name="O1" instance="BEL_LT-LUT[0]" mode="BEL_LT-LUT">
+					<inputs>
+						<port name="in">BLK_IG-LUTFF.I[0]-&gt;BEL_LT-LUT.in[0] BLK_IG-LUTFF.I[1]-&gt;BEL_LT-LUT.in[1] BLK_IG-LUTFF.I[2]-&gt;BEL_LT-LUT.in[2] BLK_IG-LUTFF.I[3]-&gt;BEL_LT-LUT.in[3]</port>
+					</inputs>
+					<outputs>
+						<port name="out">lut[0].out[0]-&gt;direct:BEL_LT-LUT</port>
+					</outputs>
+					<clocks />
+					<block name="O1" instance="lut[0]">
+						<attributes />
+						<parameters />
+						<inputs>
+							<port name="in">BEL_LT-LUT.in[0]-&gt;direct:BEL_LT-LUT BEL_LT-LUT.in[1]-&gt;direct:BEL_LT-LUT BEL_LT-LUT.in[2]-&gt;direct:BEL_LT-LUT BEL_LT-LUT.in[3]-&gt;direct:BEL_LT-LUT</port>
+							<port_rotation_map name="in">1 2 0 3</port_rotation_map>
+						</inputs>
+						<outputs>
+							<port name="out">O1</port>
+						</outputs>
+						<clocks />
+					</block>
+				</block>
+			</block>
+		</block>
+	</block>
+	<block name="O2" instance="BLK_TI-TILE[4]" mode="default">
+		<inputs>
+			<port name="IN">I1 open I4 I2 open I3</port>
+			<port name="CIN">open</port>
+		</inputs>
+		<outputs>
+			<port name="OUT">BLK_SI-LUTFF[0].O[0]-&gt;BLK_TI-TILE.OUT[0] open</port>
+			<port name="COUT">open</port>
+		</outputs>
+		<clocks>
+			<port name="CLK">open open</port>
+		</clocks>
+		<block name="open" instance="BLK_BB-CARRY[0]" />
+		<block name="O2" instance="BLK_SI-LUTFF[0]" mode="default">
+			<inputs>
+				<port name="I">BLK_TI-TILE.IN[0]-&gt;BEL_RX-IN0.I[0] BLK_TI-TILE.IN[3]-&gt;BEL_RX-IN1.I[1] BLK_TI-TILE.IN[2]-&gt;BEL_RX-IN2.I[2] BLK_TI-TILE.IN[5]-&gt;BEL_RX-IN3.I[3]</port>
+			</inputs>
+			<outputs>
+				<port name="O">BLK_IG-LUTFF[0].O[0]-&gt;BLK_SI-LUTFF.O</port>
+				<port name="LO">open</port>
+			</outputs>
+			<clocks>
+				<port name="C">open</port>
+			</clocks>
+			<block name="O2" instance="BLK_IG-LUTFF[0]" mode="default">
+				<inputs>
+					<port name="I">BLK_SI-LUTFF.I[0]-&gt;BLK_IG-LUTFF.I[0] BLK_SI-LUTFF.I[1]-&gt;BLK_IG-LUTFF.I[1] BLK_SI-LUTFF.I[2]-&gt;BLK_IG-LUTFF.I[2] BLK_SI-LUTFF.I[3]-&gt;BLK_IG-LUTFF.I[3]</port>
+				</inputs>
+				<outputs>
+					<port name="O">BEL_LT-LUT[0].out[0]-&gt;BLK_IG-LUTFF.O</port>
+					<port name="LO">open</port>
+				</outputs>
+				<clocks>
+					<port name="C">open</port>
+				</clocks>
+				<block name="open" instance="BEL_FF-FF[0]" />
+				<block name="O2" instance="BEL_LT-LUT[0]" mode="BEL_LT-LUT">
+					<inputs>
+						<port name="in">BLK_IG-LUTFF.I[0]-&gt;BEL_LT-LUT.in[0] BLK_IG-LUTFF.I[1]-&gt;BEL_LT-LUT.in[1] BLK_IG-LUTFF.I[2]-&gt;BEL_LT-LUT.in[2] BLK_IG-LUTFF.I[3]-&gt;BEL_LT-LUT.in[3]</port>
+					</inputs>
+					<outputs>
+						<port name="out">lut[0].out[0]-&gt;direct:BEL_LT-LUT</port>
+					</outputs>
+					<clocks />
+					<block name="O2" instance="lut[0]">
+						<attributes />
+						<parameters />
+						<inputs>
+							<port name="in">BEL_LT-LUT.in[0]-&gt;direct:BEL_LT-LUT BEL_LT-LUT.in[1]-&gt;direct:BEL_LT-LUT BEL_LT-LUT.in[2]-&gt;direct:BEL_LT-LUT BEL_LT-LUT.in[3]-&gt;direct:BEL_LT-LUT</port>
+							<port_rotation_map name="in">1 2 0 3</port_rotation_map>
+						</inputs>
+						<outputs>
+							<port name="out">O2</port>
+						</outputs>
+						<clocks />
+					</block>
+				</block>
+			</block>
+		</block>
+	</block>
+	<block name="O3" instance="BLK_TI-TILE[5]" mode="default">
+		<inputs>
+			<port name="IN">I5 open I4 open open I6</port>
+			<port name="CIN">open</port>
+		</inputs>
+		<outputs>
+			<port name="OUT">BLK_SI-LUTFF[0].O[0]-&gt;BLK_TI-TILE.OUT[0] open</port>
+			<port name="COUT">open</port>
+		</outputs>
+		<clocks>
+			<port name="CLK">open open</port>
+		</clocks>
+		<block name="open" instance="BLK_BB-CARRY[0]" />
+		<block name="O3" instance="BLK_SI-LUTFF[0]" mode="default">
+			<inputs>
+				<port name="I">BLK_TI-TILE.IN[0]-&gt;BEL_RX-IN0.I[0] BLK_TI-TILE.IN[2]-&gt;BEL_RX-IN1.I[1] open BLK_TI-TILE.IN[5]-&gt;BEL_RX-IN3.I[3]</port>
+			</inputs>
+			<outputs>
+				<port name="O">BLK_IG-LUTFF[0].O[0]-&gt;BLK_SI-LUTFF.O</port>
+				<port name="LO">open</port>
+			</outputs>
+			<clocks>
+				<port name="C">open</port>
+			</clocks>
+			<block name="O3" instance="BLK_IG-LUTFF[0]" mode="default">
+				<inputs>
+					<port name="I">BLK_SI-LUTFF.I[0]-&gt;BLK_IG-LUTFF.I[0] BLK_SI-LUTFF.I[1]-&gt;BLK_IG-LUTFF.I[1] open BLK_SI-LUTFF.I[3]-&gt;BLK_IG-LUTFF.I[3]</port>
+				</inputs>
+				<outputs>
+					<port name="O">BEL_LT-LUT[0].out[0]-&gt;BLK_IG-LUTFF.O</port>
+					<port name="LO">open</port>
+				</outputs>
+				<clocks>
+					<port name="C">open</port>
+				</clocks>
+				<block name="open" instance="BEL_FF-FF[0]" />
+				<block name="O3" instance="BEL_LT-LUT[0]" mode="BEL_LT-LUT">
+					<inputs>
+						<port name="in">BLK_IG-LUTFF.I[0]-&gt;BEL_LT-LUT.in[0] BLK_IG-LUTFF.I[1]-&gt;BEL_LT-LUT.in[1] open BLK_IG-LUTFF.I[3]-&gt;BEL_LT-LUT.in[3]</port>
+					</inputs>
+					<outputs>
+						<port name="out">lut[0].out[0]-&gt;direct:BEL_LT-LUT</port>
+					</outputs>
+					<clocks />
+					<block name="O3" instance="lut[0]">
+						<attributes />
+						<parameters />
+						<inputs>
+							<port name="in">BEL_LT-LUT.in[0]-&gt;direct:BEL_LT-LUT BEL_LT-LUT.in[1]-&gt;direct:BEL_LT-LUT open BEL_LT-LUT.in[3]-&gt;direct:BEL_LT-LUT</port>
+							<port_rotation_map name="in">1 0 open 2</port_rotation_map>
+						</inputs>
+						<outputs>
+							<port name="out">O3</port>
+						</outputs>
+						<clocks />
+					</block>
+				</block>
+			</block>
+		</block>
+	</block>
+	<block name="I0" instance="BLK_IG-IBUF[6]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="I">BLK_BB-IBUF[0].inpad[0]-&gt;IBUF</port>
+		</outputs>
+		<clocks />
+		<block name="I0" instance="BLK_BB-IBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">I0</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="I1" instance="BLK_IG-IBUF[7]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="I">BLK_BB-IBUF[0].inpad[0]-&gt;IBUF</port>
+		</outputs>
+		<clocks />
+		<block name="I1" instance="BLK_BB-IBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">I1</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="I2" instance="BLK_IG-IBUF[8]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="I">BLK_BB-IBUF[0].inpad[0]-&gt;IBUF</port>
+		</outputs>
+		<clocks />
+		<block name="I2" instance="BLK_BB-IBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">I2</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="I3" instance="BLK_IG-IBUF[9]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="I">BLK_BB-IBUF[0].inpad[0]-&gt;IBUF</port>
+		</outputs>
+		<clocks />
+		<block name="I3" instance="BLK_BB-IBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">I3</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="I4" instance="BLK_IG-IBUF[10]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="I">BLK_BB-IBUF[0].inpad[0]-&gt;IBUF</port>
+		</outputs>
+		<clocks />
+		<block name="I4" instance="BLK_BB-IBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">I4</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="I5" instance="BLK_IG-IBUF[11]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="I">BLK_BB-IBUF[0].inpad[0]-&gt;IBUF</port>
+		</outputs>
+		<clocks />
+		<block name="I5" instance="BLK_BB-IBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">I5</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="I6" instance="BLK_IG-IBUF[12]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="I">BLK_BB-IBUF[0].inpad[0]-&gt;IBUF</port>
+		</outputs>
+		<clocks />
+		<block name="I6" instance="BLK_BB-IBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">I6</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+</block>

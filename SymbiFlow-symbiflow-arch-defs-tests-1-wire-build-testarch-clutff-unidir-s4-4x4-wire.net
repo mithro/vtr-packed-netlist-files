@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<block name="wire.net" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:8d0eec93cfa419671d69002645d5b89253ed072e2a81f164c03a74ae5c52add8" atom_netlist_id="SHA256:e8c5449c443ad3d2e7efd75a7d1e50181f14cd3536ab8d9023a58ca75b888aa6">
+	<inputs>in</inputs>
+	<outputs>out:out</outputs>
+	<clocks></clocks>
+	<block name="out:out" instance="BLK_IG-OBUF[0]" mode="default">
+		<inputs>
+			<port name="O">in</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:out" instance="BLK_BB-OBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">BLK_IG-OBUF.O[0]-&gt;OBUF</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="in" instance="BLK_IG-IBUF[1]" mode="default">
+		<inputs />
+		<outputs>
+			<port name="I">BLK_BB-IBUF[0].inpad[0]-&gt;IBUF</port>
+		</outputs>
+		<clocks />
+		<block name="in" instance="BLK_BB-IBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">in</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+</block>

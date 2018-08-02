@@ -1,0 +1,926 @@
+<?xml version="1.0"?>
+<block name="ff.net" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:ba6206c37e9893709e826f5e792809678a5d9304815bc5bad2bb0745369803b5" atom_netlist_id="SHA256:ee9e601f2732b22e076ebb12b2a08174b45908e41b6d5051f58de742804e7305">
+	<inputs>clk di</inputs>
+	<outputs>out:do</outputs>
+	<clocks>clk</clocks>
+	<block name="out:do" instance="BLK_BB-VPR_PAD[0]" mode="PAD_IS_OUTPUT">
+		<inputs>
+			<port name="outpad">do</port>
+		</inputs>
+		<outputs>
+			<port name="inpad">open</port>
+		</outputs>
+		<clocks />
+		<block name="out:do" instance="PAD_OT-OUTPUT[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">BLK_BB-VPR_PAD.outpad[0]-&gt;OUTPUT</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="$auto$simplemap.cc:420:simplemap_dff$59" instance="BLK_MB-CLBLL_L-INT_L[1]" mode="default">
+		<inputs>
+			<port name="EE2END">open open open open</port>
+			<port name="EE4END">open open open open</port>
+			<port name="EL1END">open open open open</port>
+			<port name="ER1END">open open open open</port>
+			<port name="NE2END">open open open open</port>
+			<port name="NE6END">open open open open</port>
+			<port name="NL1END">open open open open</port>
+			<port name="NN2END">open open open open</port>
+			<port name="NN6END">open open open open</port>
+			<port name="NR1END">open open open open</port>
+			<port name="NW2END">open open open open</port>
+			<port name="NW6END">open open open open</port>
+			<port name="SE2END">open open open open</port>
+			<port name="SE6END">open open open open</port>
+			<port name="SL1END">open open open open</port>
+			<port name="SR1END">open open open open</port>
+			<port name="SS2END">open open open open</port>
+			<port name="SS6END">open open open open</port>
+			<port name="SW2END">di open open open</port>
+			<port name="SW6END">open open open open</port>
+			<port name="WL1END">open open open open</port>
+			<port name="WR1END">open open open open</port>
+			<port name="WW2END">open open open open</port>
+			<port name="WW4END">open open open open</port>
+			<port name="CIN_N">open open</port>
+		</inputs>
+		<outputs>
+			<port name="EE2BEG">open open open BLK_BB-INT_L[0].EE2BEG[3]-&gt;EE2BEG</port>
+			<port name="EE4BEG">open open open open</port>
+			<port name="EL1BEG">open open open open</port>
+			<port name="ER1BEG">open open open open</port>
+			<port name="NE2BEG">open open open open</port>
+			<port name="NE6BEG">open open open open</port>
+			<port name="NL1BEG">open open open open</port>
+			<port name="NN2BEG">open open open open</port>
+			<port name="NN6BEG">open open open open</port>
+			<port name="NR1BEG">open open open open</port>
+			<port name="NW2BEG">open open open open</port>
+			<port name="NW6BEG">open open open open</port>
+			<port name="SE2BEG">open open open open</port>
+			<port name="SE6BEG">open open open open</port>
+			<port name="SL1BEG">open open open open</port>
+			<port name="SR1BEG">open open open open</port>
+			<port name="SS2BEG">open open open open</port>
+			<port name="SS6BEG">open open open open</port>
+			<port name="SW2BEG">open open open open</port>
+			<port name="SW6BEG">open open open open</port>
+			<port name="WL1BEG">open open open open</port>
+			<port name="WR1BEG">open open open open</port>
+			<port name="WW2BEG">open open open open</port>
+			<port name="WW4BEG">open open open open</port>
+			<port name="COUT_N">open open</port>
+		</outputs>
+		<clocks>
+			<port name="GCLK_B">open open open open open open open open open open open open</port>
+			<port name="CLK">clk open</port>
+		</clocks>
+		<block name="$auto$simplemap.cc:420:simplemap_dff$59" instance="BLK_TI-CLBLL_L[0]" mode="default">
+			<inputs>
+				<port name="BYP">BLK_BB-INT_L[0].BYP[0]-&gt;BYP open open open open open open open</port>
+				<port name="CTRL">BLK_BB-INT_L[0].CTRL[0]-&gt;CTRL open</port>
+				<port name="FAN">open open open open open open BLK_BB-INT_L[0].FAN[6]-&gt;FAN open</port>
+				<port name="IMUX">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+				<port name="LL_CIN_N">open</port>
+				<port name="L_CIN_N">open</port>
+			</inputs>
+			<outputs>
+				<port name="LL_COUT_N">open</port>
+				<port name="LOGIC_OUTS">open open open BLK_SI-CLBLL_L[0].DQ[0]-&gt;BLK_TI-CLBLL_L.LOGIC_OUTS[3] open open open open BLK_SI-CLBLL_L[0].A[0]-&gt;BLK_TI-CLBLL_L.LOGIC_OUTS[8] open open open open open open open BLK_SI-CLBLL_L[0].AMUX[0]-&gt;BLK_TI-CLBLL_L.LOGIC_OUTS[16] open open open open open open open</port>
+				<port name="L_COUT_N">open</port>
+			</outputs>
+			<clocks>
+				<port name="CLK">BLK_MB-CLBLL_L-INT_L.CLK[0]-&gt;FIXME_CLK open</port>
+			</clocks>
+			<block name="$auto$simplemap.cc:420:simplemap_dff$59" instance="BLK_SI-CLBLL_L[0]" mode="default">
+				<inputs>
+					<port name="A1">open</port>
+					<port name="A2">open</port>
+					<port name="A3">open</port>
+					<port name="A4">open</port>
+					<port name="A5">open</port>
+					<port name="A6">open</port>
+					<port name="AX">BLK_TI-CLBLL_L.BYP[0]-&gt;BLK_SI-CLBLL_L.AX</port>
+					<port name="B1">open</port>
+					<port name="B2">open</port>
+					<port name="B3">open</port>
+					<port name="B4">open</port>
+					<port name="B5">open</port>
+					<port name="B6">open</port>
+					<port name="BX">open</port>
+					<port name="C1">open</port>
+					<port name="C2">open</port>
+					<port name="C3">open</port>
+					<port name="C4">open</port>
+					<port name="C5">open</port>
+					<port name="C6">open</port>
+					<port name="CE">BLK_TI-CLBLL_L.FAN[6]-&gt;BLK_SI-CLBLL_L.CE</port>
+					<port name="CIN">open</port>
+					<port name="CX">open</port>
+					<port name="D1">open</port>
+					<port name="D2">open</port>
+					<port name="D3">open</port>
+					<port name="D4">open</port>
+					<port name="D5">open</port>
+					<port name="D6">open</port>
+					<port name="DX">open</port>
+					<port name="SR">BLK_TI-CLBLL_L.CTRL[0]-&gt;BLK_SI-CLBLL_L.SR</port>
+				</inputs>
+				<outputs>
+					<port name="A">BLK_IG-SLICEL[0].A[0]-&gt;BLK_SI-CLBLL_L.A</port>
+					<port name="AMUX">BLK_IG-SLICEL[0].AMUX[0]-&gt;BLK_SI-CLBLL_L.AMUX</port>
+					<port name="AQ">open</port>
+					<port name="B">open</port>
+					<port name="BMUX">open</port>
+					<port name="BQ">open</port>
+					<port name="C">open</port>
+					<port name="CMUX">open</port>
+					<port name="COUT">open</port>
+					<port name="CQ">open</port>
+					<port name="D">open</port>
+					<port name="DMUX">open</port>
+					<port name="DQ">BLK_IG-SLICEL[0].DQ[0]-&gt;BLK_SI-CLBLL_L.DQ</port>
+				</outputs>
+				<clocks>
+					<port name="CLK">BLK_TI-CLBLL_L.CLK[0]-&gt;BLK_SI-CLBLL_L.CLK</port>
+				</clocks>
+				<block name="$auto$simplemap.cc:420:simplemap_dff$59" instance="BLK_IG-SLICEL[0]" mode="default">
+					<inputs>
+						<port name="DX">open</port>
+						<port name="D1">open</port>
+						<port name="D2">open</port>
+						<port name="D3">open</port>
+						<port name="D4">open</port>
+						<port name="D5">open</port>
+						<port name="D6">open</port>
+						<port name="CX">open</port>
+						<port name="C1">open</port>
+						<port name="C2">open</port>
+						<port name="C3">open</port>
+						<port name="C4">open</port>
+						<port name="C5">open</port>
+						<port name="C6">open</port>
+						<port name="BX">open</port>
+						<port name="B1">open</port>
+						<port name="B2">open</port>
+						<port name="B3">open</port>
+						<port name="B4">open</port>
+						<port name="B5">open</port>
+						<port name="B6">open</port>
+						<port name="AX">BLK_SI-CLBLL_L.AX[0]-&gt;BLK_IG-SLICEL.AX</port>
+						<port name="A1">open</port>
+						<port name="A2">open</port>
+						<port name="A3">open</port>
+						<port name="A4">open</port>
+						<port name="A5">open</port>
+						<port name="A6">open</port>
+						<port name="SR">BLK_SI-CLBLL_L.SR[0]-&gt;BLK_IG-SLICEL.SR</port>
+						<port name="CE">BLK_SI-CLBLL_L.CE[0]-&gt;BLK_IG-SLICEL.CE</port>
+						<port name="CIN">open</port>
+					</inputs>
+					<outputs>
+						<port name="COUT">open</port>
+						<port name="DMUX">open</port>
+						<port name="D">open</port>
+						<port name="DQ">BLK_BB-AFF[0].Q[0]-&gt;AFF</port>
+						<port name="CMUX">open</port>
+						<port name="C">open</port>
+						<port name="CQ">open</port>
+						<port name="BMUX">open</port>
+						<port name="B">open</port>
+						<port name="BQ">open</port>
+						<port name="AMUX">BEL_RX-AOUTMUX[0].OUT[0]-&gt;AOUTMUX_OUT</port>
+						<port name="A">BLK_IG-ALUT[0].O6[0]-&gt;BLK_IG-SLICEL_AOUT</port>
+						<port name="AQ">open</port>
+					</outputs>
+					<clocks>
+						<port name="CLK">BLK_SI-CLBLL_L.CLK[0]-&gt;BLK_IG-SLICEL.CLK</port>
+					</clocks>
+					<block name="$false" instance="BLK_IG-ALUT[0]" mode="BLK_IG-ALUT-LUT5x2">
+						<inputs>
+							<port name="A1">open</port>
+							<port name="A2">open</port>
+							<port name="A3">open</port>
+							<port name="A4">open</port>
+							<port name="A5">open</port>
+							<port name="A6">open</port>
+						</inputs>
+						<outputs>
+							<port name="O5">BEL_LT-A5LUT[0].out[0]-&gt;O5</port>
+							<port name="O6">BEL_LT-A5LUT[1].out[0]-&gt;O6</port>
+						</outputs>
+						<clocks />
+						<block name="$true" instance="BEL_LT-A5LUT[0]" mode="BEL_LT-A5LUT">
+							<inputs>
+								<port name="in">open open open open open</port>
+							</inputs>
+							<outputs>
+								<port name="out">lut[0].out[0]-&gt;direct:BEL_LT-A5LUT</port>
+							</outputs>
+							<clocks />
+							<block name="$true" instance="lut[0]">
+								<attributes />
+								<parameters />
+								<inputs>
+									<port name="in">open open open open open</port>
+								</inputs>
+								<outputs>
+									<port name="out">$true</port>
+								</outputs>
+								<clocks />
+							</block>
+						</block>
+						<block name="$false" instance="BEL_LT-A5LUT[1]" mode="BEL_LT-A5LUT">
+							<inputs>
+								<port name="in">open open open open open</port>
+							</inputs>
+							<outputs>
+								<port name="out">lut[0].out[0]-&gt;direct:BEL_LT-A5LUT</port>
+							</outputs>
+							<clocks />
+							<block name="$false" instance="lut[0]">
+								<attributes />
+								<parameters />
+								<inputs>
+									<port name="in">open open open open open</port>
+								</inputs>
+								<outputs>
+									<port name="out">$false</port>
+								</outputs>
+								<clocks />
+							</block>
+						</block>
+					</block>
+					<block name="open" instance="BLK_IG-BLUT[0]" />
+					<block name="open" instance="BEL_MX-F7AMUX[0]" />
+					<block name="open" instance="BLK_IG-CLUT[0]" />
+					<block name="open" instance="BLK_IG-DLUT[0]" />
+					<block name="open" instance="BEL_MX-F7BMUX[0]" />
+					<block name="open" instance="BEL_MX-F8MUX[0]" />
+					<block name="open" instance="BEL_RX-A5FFMUX[0]" />
+					<block name="open" instance="BEL_RX-B5FFMUX[0]" />
+					<block name="open" instance="BEL_RX-C5FFMUX[0]" />
+					<block name="open" instance="BEL_RX-D5FFMUX[0]" />
+					<block name="open" instance="BLK_IG-A5FF[0]" />
+					<block name="open" instance="BLK_IG-B5FF[0]" />
+					<block name="open" instance="BLK_IG-C5FF[0]" />
+					<block name="open" instance="BLK_IG-D5FF[0]" />
+					<block name="$auto$simplemap.cc:420:simplemap_dff$59" instance="BLK_BB-AFF[0]" mode="FDRE">
+						<inputs>
+							<port name="D">BEL_RX-AFFMUX[0].OUT[0]-&gt;AFFMUX_OUT</port>
+							<port name="CE">BLK_IG-SLICEL.CE[0]-&gt;AFF_CE</port>
+							<port name="SR">BLK_IG-SLICEL.SR[0]-&gt;AFF_SR</port>
+						</inputs>
+						<outputs>
+							<port name="Q">BEL_FF-FDRE[0].Q[0]-&gt;Q</port>
+						</outputs>
+						<clocks>
+							<port name="CK">BLK_IG-SLICEL.CLK[0]-&gt;AFF_CK</port>
+						</clocks>
+						<block name="$auto$simplemap.cc:420:simplemap_dff$59" instance="BEL_FF-FDRE[0]">
+							<attributes>
+								<attribute name="src">"SymbiFlow/symbiflow-arch-defs/env/conda/bin/../share/yosys/xilinx/cells_map.v:3"</attribute>
+							</attributes>
+							<parameters>
+								<parameter name="IS_D_INVERTED">0</parameter>
+								<parameter name="IS_R_INVERTED">0</parameter>
+								<parameter name="INIT">0</parameter>
+								<parameter name="IS_C_INVERTED">0</parameter>
+							</parameters>
+							<inputs>
+								<port name="D">BLK_BB-AFF.D[0]-&gt;D</port>
+								<port name="CE">BLK_BB-AFF.CE[0]-&gt;CE</port>
+								<port name="R">BLK_BB-AFF.SR[0]-&gt;R</port>
+							</inputs>
+							<outputs>
+								<port name="Q">do</port>
+							</outputs>
+							<clocks>
+								<port name="C">BLK_BB-AFF.CK[0]-&gt;C</port>
+							</clocks>
+						</block>
+					</block>
+					<block name="open" instance="BLK_BB-BFF[0]" />
+					<block name="open" instance="BLK_BB-CFF[0]" />
+					<block name="open" instance="BLK_BB-DFF[0]" />
+					<block name="open" instance="BEL_RX-PRECYINIT_MUX[0]" />
+					<block name="open" instance="BEL_RX-ACY0[0]" />
+					<block name="open" instance="BEL_RX-BCY0[0]" />
+					<block name="open" instance="BEL_RX-CCY0[0]" />
+					<block name="open" instance="BEL_RX-DCY0[0]" />
+					<block name="open" instance="BLK_IG-CARRY4_MODES[0]" />
+					<block name="open" instance="BEL_RX-AOUTMUX[0]" mode="default" pb_type_num_modes="1">
+						<inputs>
+							<port name="A5Q">open</port>
+							<port name="XOR">open</port>
+							<port name="O6">open</port>
+							<port name="O5">BLK_IG-ALUT[0].O5[0]-&gt;AOUTMUX_IN_O5</port>
+							<port name="F7">open</port>
+							<port name="CY">open</port>
+						</inputs>
+						<outputs>
+							<port name="OUT">BEL_RX-AOUTMUX[0].O5[0]-&gt;BEL_RX-AOUTMUX</port>
+						</outputs>
+						<clocks />
+					</block>
+					<block name="open" instance="BEL_RX-BOUTMUX[0]" />
+					<block name="open" instance="BEL_RX-COUTMUX[0]" />
+					<block name="open" instance="BEL_RX-DOUTMUX[0]" />
+					<block name="open" instance="BEL_RX-AFFMUX[0]" mode="default" pb_type_num_modes="1">
+						<inputs>
+							<port name="XOR">open</port>
+							<port name="O6">open</port>
+							<port name="O5">open</port>
+							<port name="F7">open</port>
+							<port name="CY">open</port>
+							<port name="AX">BLK_IG-SLICEL.AX[0]-&gt;AFFMUX_IN_AX</port>
+						</inputs>
+						<outputs>
+							<port name="OUT">BEL_RX-AFFMUX[0].AX[0]-&gt;BEL_RX-AFFMUX</port>
+						</outputs>
+						<clocks />
+					</block>
+					<block name="open" instance="BEL_RX-BFFMUX[0]" />
+					<block name="open" instance="BEL_RX-CFFMUX[0]" />
+					<block name="open" instance="BEL_RX-DFFMUX[0]" />
+				</block>
+			</block>
+			<block name="open" instance="BLK_SI-CLBLL_LL[0]" />
+		</block>
+		<block name="open" instance="BLK_BB-INT_L[0]" mode="default" pb_type_num_modes="1">
+			<inputs>
+				<port name="EE2END">open open open open</port>
+				<port name="EE4END">open open open open</port>
+				<port name="EL1END">open open open open</port>
+				<port name="ER1END">open open open open</port>
+				<port name="NE2END">open open open open</port>
+				<port name="NE6END">open open open open</port>
+				<port name="NL1END">open open open open</port>
+				<port name="NN2END">open open open open</port>
+				<port name="NN6END">open open open open</port>
+				<port name="NR1END">open open open open</port>
+				<port name="NW2END">open open open open</port>
+				<port name="NW6END">open open open open</port>
+				<port name="SE2END">open open open open</port>
+				<port name="SE6END">open open open open</port>
+				<port name="SL1END">open open open open</port>
+				<port name="SR1END">open open open open</port>
+				<port name="SS2END">open open open open</port>
+				<port name="SS6END">open open open open</port>
+				<port name="SW2END">BLK_MB-CLBLL_L-INT_L.SW2END[0]-&gt;SW2END open open open</port>
+				<port name="SW6END">open open open open</port>
+				<port name="WL1END">open open open open</port>
+				<port name="WR1END">open open open open</port>
+				<port name="WW2END">open open open open</port>
+				<port name="WW4END">open open open open</port>
+				<port name="LOGIC_OUTS">open open open BLK_TI-CLBLL_L[0].LOGIC_OUTS[3]-&gt;LOGIC_OUTS open open open open BLK_TI-CLBLL_L[0].LOGIC_OUTS[8]-&gt;LOGIC_OUTS open open open open open open open BLK_TI-CLBLL_L[0].LOGIC_OUTS[16]-&gt;LOGIC_OUTS open open open open open open open</port>
+			</inputs>
+			<outputs>
+				<port name="EE2BEG">open open open BEL_RX-EE2BEG3[0].OUT[0]-&gt;BLK_BB-INT_L.EE2BEG[3]</port>
+				<port name="EE4BEG">open open open open</port>
+				<port name="EL1BEG">open open open open</port>
+				<port name="ER1BEG">open open open open</port>
+				<port name="NE2BEG">open open open open</port>
+				<port name="NE6BEG">open open open open</port>
+				<port name="NL1BEG">open open open open</port>
+				<port name="NN2BEG">open open open open</port>
+				<port name="NN6BEG">open open open open</port>
+				<port name="NR1BEG">open open open open</port>
+				<port name="NW2BEG">open open open open</port>
+				<port name="NW6BEG">open open open open</port>
+				<port name="SE2BEG">open open open open</port>
+				<port name="SE6BEG">open open open open</port>
+				<port name="SL1BEG">open open open open</port>
+				<port name="SR1BEG">open open open open</port>
+				<port name="SS2BEG">open open open open</port>
+				<port name="SS6BEG">open open open open</port>
+				<port name="SW2BEG">open open open open</port>
+				<port name="SW6BEG">open open open open</port>
+				<port name="WL1BEG">open open open open</port>
+				<port name="WR1BEG">open open open open</port>
+				<port name="WW2BEG">open open open open</port>
+				<port name="WW4BEG">open open open open</port>
+				<port name="BYP">BEL_RX-BYP0[0].OUT[0]-&gt;BLK_BB-INT_L.BYP[0] open open open open open open open</port>
+				<port name="BYP_ALT">open open open open open open open open</port>
+				<port name="BYP_BOUNCE">open open open open open open open open</port>
+				<port name="CLK">open open</port>
+				<port name="CTRL">BEL_RX-CTRL0[0].OUT[0]-&gt;BLK_BB-INT_L.CTRL[0] open</port>
+				<port name="FAN">open open open open open open BEL_RX-FAN6[0].OUT[0]-&gt;BLK_BB-INT_L.FAN[6] open</port>
+				<port name="FAN_ALT">open open open open open open open open</port>
+				<port name="FAN_BOUNCE">open open open open open open open open</port>
+				<port name="IMUX">open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open open</port>
+			</outputs>
+			<clocks>
+				<port name="GCLK_B">open open open open open open open open open open open open</port>
+			</clocks>
+			<block name="open" instance="BEL_RX-EE2BEG0[0]" />
+			<block name="open" instance="BEL_RX-EE2BEG1[0]" />
+			<block name="open" instance="BEL_RX-EE2BEG2[0]" />
+			<block name="open" instance="BEL_RX-EE2BEG3[0]" mode="default" pb_type_num_modes="1">
+				<inputs>
+					<port name="EE2END3">open</port>
+					<port name="EE4END3">open</port>
+					<port name="EL1END3">open</port>
+					<port name="ER1END3">open</port>
+					<port name="LOGIC_OUTS3">BLK_BB-INT_L.LOGIC_OUTS[3]-&gt;BEL_RX-EE2BEG3.LOGIC_OUTS3</port>
+					<port name="LOGIC_OUTS7">open</port>
+					<port name="LOGIC_OUTS11">open</port>
+					<port name="LOGIC_OUTS15">open</port>
+					<port name="LOGIC_OUTS17">open</port>
+					<port name="LOGIC_OUTS21">open</port>
+					<port name="NE2END3">open</port>
+					<port name="NE6END3">open</port>
+					<port name="NN2END3">open</port>
+					<port name="NN6END3">open</port>
+					<port name="NR1END3">open</port>
+					<port name="SE2END3">open</port>
+					<port name="SE6END3">open</port>
+					<port name="SS2END3">open</port>
+					<port name="SS6END3">open</port>
+				</inputs>
+				<outputs>
+					<port name="OUT">BEL_RX-EE2BEG3[0].LOGIC_OUTS3[0]-&gt;BEL_RX-EE2BEG3</port>
+				</outputs>
+				<clocks />
+			</block>
+			<block name="open" instance="BEL_RX-EE4BEG0[0]" />
+			<block name="open" instance="BEL_RX-EE4BEG1[0]" />
+			<block name="open" instance="BEL_RX-EE4BEG2[0]" />
+			<block name="open" instance="BEL_RX-EE4BEG3[0]" />
+			<block name="open" instance="BEL_RX-EL1BEG0[0]" />
+			<block name="open" instance="BEL_RX-EL1BEG1[0]" />
+			<block name="open" instance="BEL_RX-EL1BEG2[0]" />
+			<block name="open" instance="BEL_RX-EL1BEG3[0]" />
+			<block name="open" instance="BEL_RX-ER1BEG0[0]" />
+			<block name="open" instance="BEL_RX-ER1BEG1[0]" />
+			<block name="open" instance="BEL_RX-ER1BEG2[0]" />
+			<block name="open" instance="BEL_RX-ER1BEG3[0]" />
+			<block name="open" instance="BEL_RX-NE2BEG0[0]" />
+			<block name="open" instance="BEL_RX-NE2BEG1[0]" />
+			<block name="open" instance="BEL_RX-NE2BEG2[0]" />
+			<block name="open" instance="BEL_RX-NE2BEG3[0]" />
+			<block name="open" instance="BEL_RX-NE6BEG0[0]" />
+			<block name="open" instance="BEL_RX-NE6BEG1[0]" />
+			<block name="open" instance="BEL_RX-NE6BEG2[0]" />
+			<block name="open" instance="BEL_RX-NE6BEG3[0]" />
+			<block name="open" instance="BEL_RX-NL1BEG0[0]" />
+			<block name="open" instance="BEL_RX-NL1BEG1[0]" />
+			<block name="open" instance="BEL_RX-NL1BEG2[0]" />
+			<block name="open" instance="BEL_RX-NL1BEG3[0]" />
+			<block name="open" instance="BEL_RX-NN2BEG0[0]" />
+			<block name="open" instance="BEL_RX-NN2BEG1[0]" />
+			<block name="open" instance="BEL_RX-NN2BEG2[0]" />
+			<block name="open" instance="BEL_RX-NN2BEG3[0]" />
+			<block name="open" instance="BEL_RX-NN6BEG0[0]" />
+			<block name="open" instance="BEL_RX-NN6BEG1[0]" />
+			<block name="open" instance="BEL_RX-NN6BEG2[0]" />
+			<block name="open" instance="BEL_RX-NN6BEG3[0]" />
+			<block name="open" instance="BEL_RX-NR1BEG0[0]" />
+			<block name="open" instance="BEL_RX-NR1BEG1[0]" />
+			<block name="open" instance="BEL_RX-NR1BEG2[0]" />
+			<block name="open" instance="BEL_RX-NR1BEG3[0]" />
+			<block name="open" instance="BEL_RX-NW2BEG0[0]" />
+			<block name="open" instance="BEL_RX-NW2BEG1[0]" />
+			<block name="open" instance="BEL_RX-NW2BEG2[0]" />
+			<block name="open" instance="BEL_RX-NW2BEG3[0]" />
+			<block name="open" instance="BEL_RX-NW6BEG0[0]" />
+			<block name="open" instance="BEL_RX-NW6BEG1[0]" />
+			<block name="open" instance="BEL_RX-NW6BEG2[0]" />
+			<block name="open" instance="BEL_RX-NW6BEG3[0]" />
+			<block name="open" instance="BEL_RX-SE2BEG0[0]" />
+			<block name="open" instance="BEL_RX-SE2BEG1[0]" />
+			<block name="open" instance="BEL_RX-SE2BEG2[0]" />
+			<block name="open" instance="BEL_RX-SE2BEG3[0]" />
+			<block name="open" instance="BEL_RX-SE6BEG0[0]" />
+			<block name="open" instance="BEL_RX-SE6BEG1[0]" />
+			<block name="open" instance="BEL_RX-SE6BEG2[0]" />
+			<block name="open" instance="BEL_RX-SE6BEG3[0]" />
+			<block name="open" instance="BEL_RX-SL1BEG0[0]" />
+			<block name="open" instance="BEL_RX-SL1BEG1[0]" />
+			<block name="open" instance="BEL_RX-SL1BEG2[0]" />
+			<block name="open" instance="BEL_RX-SL1BEG3[0]" />
+			<block name="open" instance="BEL_RX-SR1BEG0[0]" />
+			<block name="open" instance="BEL_RX-SR1BEG1[0]" />
+			<block name="open" instance="BEL_RX-SR1BEG2[0]" />
+			<block name="open" instance="BEL_RX-SR1BEG3[0]" />
+			<block name="open" instance="BEL_RX-SS2BEG0[0]" />
+			<block name="open" instance="BEL_RX-SS2BEG1[0]" />
+			<block name="open" instance="BEL_RX-SS2BEG2[0]" />
+			<block name="open" instance="BEL_RX-SS2BEG3[0]" />
+			<block name="open" instance="BEL_RX-SS6BEG0[0]" />
+			<block name="open" instance="BEL_RX-SS6BEG1[0]" />
+			<block name="open" instance="BEL_RX-SS6BEG2[0]" />
+			<block name="open" instance="BEL_RX-SS6BEG3[0]" />
+			<block name="open" instance="BEL_RX-SW2BEG0[0]" />
+			<block name="open" instance="BEL_RX-SW2BEG1[0]" />
+			<block name="open" instance="BEL_RX-SW2BEG2[0]" />
+			<block name="open" instance="BEL_RX-SW2BEG3[0]" />
+			<block name="open" instance="BEL_RX-SW6BEG0[0]" />
+			<block name="open" instance="BEL_RX-SW6BEG1[0]" />
+			<block name="open" instance="BEL_RX-SW6BEG2[0]" />
+			<block name="open" instance="BEL_RX-SW6BEG3[0]" />
+			<block name="open" instance="BEL_RX-WL1BEG0[0]" />
+			<block name="open" instance="BEL_RX-WL1BEG1[0]" />
+			<block name="open" instance="BEL_RX-WL1BEG2[0]" />
+			<block name="open" instance="BEL_RX-WL1BEG3[0]" />
+			<block name="open" instance="BEL_RX-WR1BEG0[0]" />
+			<block name="open" instance="BEL_RX-WR1BEG1[0]" />
+			<block name="open" instance="BEL_RX-WR1BEG2[0]" />
+			<block name="open" instance="BEL_RX-WR1BEG3[0]" />
+			<block name="open" instance="BEL_RX-WW2BEG0[0]" />
+			<block name="open" instance="BEL_RX-WW2BEG1[0]" />
+			<block name="open" instance="BEL_RX-WW2BEG2[0]" />
+			<block name="open" instance="BEL_RX-WW2BEG3[0]" />
+			<block name="open" instance="BEL_RX-WW4BEG0[0]" />
+			<block name="open" instance="BEL_RX-WW4BEG1[0]" />
+			<block name="open" instance="BEL_RX-WW4BEG2[0]" />
+			<block name="open" instance="BEL_RX-WW4BEG3[0]" />
+			<block name="open" instance="BEL_RX-BYP0[0]" mode="default" pb_type_num_modes="1">
+				<inputs>
+					<port name="BYP_ALT0">BEL_RX-BYP_ALT0[0].OUT[0]-&gt;BEL_RX-BYP0.BYP_ALT0</port>
+				</inputs>
+				<outputs>
+					<port name="OUT">BEL_RX-BYP0[0].BYP_ALT0[0]-&gt;BEL_RX-BYP0</port>
+				</outputs>
+				<clocks />
+			</block>
+			<block name="open" instance="BEL_RX-BYP1[0]" />
+			<block name="open" instance="BEL_RX-BYP2[0]" />
+			<block name="open" instance="BEL_RX-BYP3[0]" />
+			<block name="open" instance="BEL_RX-BYP4[0]" />
+			<block name="open" instance="BEL_RX-BYP5[0]" />
+			<block name="open" instance="BEL_RX-BYP6[0]" />
+			<block name="open" instance="BEL_RX-BYP7[0]" />
+			<block name="open" instance="BEL_RX-BYP_ALT0[0]" mode="default" pb_type_num_modes="1">
+				<inputs>
+					<port name="BYP_BOUNCE3">open</port>
+					<port name="BYP_BOUNCE7">open</port>
+					<port name="EE2END0">open</port>
+					<port name="EL1END0">open</port>
+					<port name="ER1END0">open</port>
+					<port name="FAN_BOUNCE2">open</port>
+					<port name="FAN_BOUNCE7">open</port>
+					<port name="LOGIC_OUTS0">open</port>
+					<port name="LOGIC_OUTS12">open</port>
+					<port name="LOGIC_OUTS22">open</port>
+					<port name="NE2END0">open</port>
+					<port name="NL1END0">open</port>
+					<port name="NN2END0">open</port>
+					<port name="NR1END0">open</port>
+					<port name="NW2END0">open</port>
+					<port name="SE2END0">open</port>
+					<port name="SL1END0">open</port>
+					<port name="SR1END3">open</port>
+					<port name="SS2END0">open</port>
+					<port name="SW2END0">BLK_BB-INT_L.SW2END[0]-&gt;BEL_RX-BYP_ALT0.SW2END0</port>
+					<port name="WL1END0">open</port>
+					<port name="WR1END0">open</port>
+					<port name="WW2END3">open</port>
+				</inputs>
+				<outputs>
+					<port name="OUT">BEL_RX-BYP_ALT0[0].SW2END0[0]-&gt;BEL_RX-BYP_ALT0</port>
+				</outputs>
+				<clocks />
+			</block>
+			<block name="open" instance="BEL_RX-BYP_ALT1[0]" mode="default" pb_type_num_modes="1">
+				<inputs>
+					<port name="BYP_BOUNCE0">open</port>
+					<port name="BYP_BOUNCE6">open</port>
+					<port name="EE2END0">open</port>
+					<port name="EL1END1">open</port>
+					<port name="ER1END0">open</port>
+					<port name="FAN_BOUNCE5">BEL_RX-FAN_BOUNCE5[0].OUT[0]-&gt;BEL_RX-BYP_ALT1.FAN_BOUNCE5</port>
+					<port name="FAN_BOUNCE6">open</port>
+					<port name="LOGIC_OUTS4">open</port>
+					<port name="LOGIC_OUTS8">open</port>
+					<port name="LOGIC_OUTS18">open</port>
+					<port name="NE2END1">open</port>
+					<port name="NL1END1">open</port>
+					<port name="NN2END1">open</port>
+					<port name="NR1END0">open</port>
+					<port name="NW2END1">open</port>
+					<port name="SE2END0">open</port>
+					<port name="SL1END0">open</port>
+					<port name="SS2END0">open</port>
+					<port name="SW2END0">open</port>
+					<port name="WL1END0">open</port>
+					<port name="WR1END1">open</port>
+					<port name="WW2END0">open</port>
+				</inputs>
+				<outputs>
+					<port name="OUT">BEL_RX-BYP_ALT1[0].FAN_BOUNCE5[0]-&gt;BEL_RX-BYP_ALT1</port>
+				</outputs>
+				<clocks />
+			</block>
+			<block name="open" instance="BEL_RX-BYP_ALT2[0]" />
+			<block name="open" instance="BEL_RX-BYP_ALT3[0]" />
+			<block name="open" instance="BEL_RX-BYP_ALT4[0]" />
+			<block name="open" instance="BEL_RX-BYP_ALT5[0]" />
+			<block name="open" instance="BEL_RX-BYP_ALT6[0]" />
+			<block name="open" instance="BEL_RX-BYP_ALT7[0]" />
+			<block name="open" instance="BEL_RX-BYP_BOUNCE0[0]" />
+			<block name="open" instance="BEL_RX-BYP_BOUNCE1[0]" mode="default" pb_type_num_modes="1">
+				<inputs>
+					<port name="BYP_ALT1">BEL_RX-BYP_ALT1[0].OUT[0]-&gt;BEL_RX-BYP_BOUNCE1.BYP_ALT1</port>
+				</inputs>
+				<outputs>
+					<port name="OUT">BEL_RX-BYP_BOUNCE1[0].BYP_ALT1[0]-&gt;BEL_RX-BYP_BOUNCE1</port>
+				</outputs>
+				<clocks />
+			</block>
+			<block name="open" instance="BEL_RX-BYP_BOUNCE2[0]" />
+			<block name="open" instance="BEL_RX-BYP_BOUNCE3[0]" />
+			<block name="open" instance="BEL_RX-BYP_BOUNCE4[0]" />
+			<block name="open" instance="BEL_RX-BYP_BOUNCE5[0]" />
+			<block name="open" instance="BEL_RX-BYP_BOUNCE6[0]" />
+			<block name="open" instance="BEL_RX-BYP_BOUNCE7[0]" />
+			<block name="open" instance="BEL_RX-CLK0[0]" />
+			<block name="open" instance="BEL_RX-CLK1[0]" />
+			<block name="open" instance="BEL_RX-CTRL0[0]" mode="default" pb_type_num_modes="1">
+				<inputs>
+					<port name="BYP_BOUNCE4">open</port>
+					<port name="EE4END2">open</port>
+					<port name="ER1END2">open</port>
+					<port name="FAN_BOUNCE1">BEL_RX-FAN_BOUNCE1[0].OUT[0]-&gt;BEL_RX-CTRL0.FAN_BOUNCE1</port>
+					<port name="NE6END2">open</port>
+					<port name="NN6END2">open</port>
+					<port name="NR1END2">open</port>
+					<port name="NW6END2">open</port>
+					<port name="SE6END2">open</port>
+					<port name="SR1END2">open</port>
+					<port name="SS6END2">open</port>
+					<port name="SW6END1">open</port>
+					<port name="WR1END2">open</port>
+					<port name="WW4END2">open</port>
+				</inputs>
+				<outputs>
+					<port name="OUT">BEL_RX-CTRL0[0].FAN_BOUNCE1[0]-&gt;BEL_RX-CTRL0</port>
+				</outputs>
+				<clocks />
+			</block>
+			<block name="open" instance="BEL_RX-CTRL1[0]" />
+			<block name="open" instance="BEL_RX-FAN0[0]" />
+			<block name="open" instance="BEL_RX-FAN1[0]" />
+			<block name="open" instance="BEL_RX-FAN2[0]" />
+			<block name="open" instance="BEL_RX-FAN3[0]" />
+			<block name="open" instance="BEL_RX-FAN4[0]" />
+			<block name="open" instance="BEL_RX-FAN5[0]" />
+			<block name="open" instance="BEL_RX-FAN6[0]" mode="default" pb_type_num_modes="1">
+				<inputs>
+					<port name="FAN_ALT6">BEL_RX-FAN_ALT6[0].OUT[0]-&gt;BEL_RX-FAN6.FAN_ALT6</port>
+				</inputs>
+				<outputs>
+					<port name="OUT">BEL_RX-FAN6[0].FAN_ALT6[0]-&gt;BEL_RX-FAN6</port>
+				</outputs>
+				<clocks />
+			</block>
+			<block name="open" instance="BEL_RX-FAN7[0]" />
+			<block name="open" instance="BEL_RX-FAN_ALT0[0]" />
+			<block name="open" instance="BEL_RX-FAN_ALT1[0]" mode="default" pb_type_num_modes="1">
+				<inputs>
+					<port name="BYP_BOUNCE2">open</port>
+					<port name="BYP_BOUNCE4">open</port>
+					<port name="EE2END3">open</port>
+					<port name="EL1END3">open</port>
+					<port name="ER1END2">open</port>
+					<port name="FAN_BOUNCE3">open</port>
+					<port name="FAN_BOUNCE4">BEL_RX-FAN_BOUNCE4[0].OUT[0]-&gt;BEL_RX-FAN_ALT1.FAN_BOUNCE4</port>
+					<port name="LOGIC_OUTS7">open</port>
+					<port name="LOGIC_OUTS11">open</port>
+					<port name="LOGIC_OUTS17">open</port>
+					<port name="NE2END3">open</port>
+					<port name="NN2END3">open</port>
+					<port name="NR1END3">open</port>
+					<port name="NW2END3">open</port>
+					<port name="SE2END3">open</port>
+					<port name="SL1END3">open</port>
+					<port name="SR1END2">open</port>
+					<port name="SS2END2">open</port>
+					<port name="SW2END2">open</port>
+					<port name="WL1END2">open</port>
+					<port name="WR1END3">open</port>
+					<port name="WW2END2">open</port>
+				</inputs>
+				<outputs>
+					<port name="OUT">BEL_RX-FAN_ALT1[0].FAN_BOUNCE4[0]-&gt;BEL_RX-FAN_ALT1</port>
+				</outputs>
+				<clocks />
+			</block>
+			<block name="open" instance="BEL_RX-FAN_ALT2[0]" />
+			<block name="open" instance="BEL_RX-FAN_ALT3[0]" />
+			<block name="open" instance="BEL_RX-FAN_ALT4[0]" mode="default" pb_type_num_modes="1">
+				<inputs>
+					<port name="BYP_BOUNCE3">open</port>
+					<port name="BYP_BOUNCE7">open</port>
+					<port name="EE2END0">open</port>
+					<port name="EL1END0">open</port>
+					<port name="ER1END0">open</port>
+					<port name="FAN_BOUNCE2">open</port>
+					<port name="FAN_BOUNCE7">open</port>
+					<port name="LOGIC_OUTS4">open</port>
+					<port name="LOGIC_OUTS8">BLK_BB-INT_L.LOGIC_OUTS[8]-&gt;BEL_RX-FAN_ALT4.LOGIC_OUTS8</port>
+					<port name="LOGIC_OUTS18">open</port>
+					<port name="NE2END0">open</port>
+					<port name="NL1END1">open</port>
+					<port name="NN2END0">open</port>
+					<port name="NR1END0">open</port>
+					<port name="NW2END1">open</port>
+					<port name="SE2END0">open</port>
+					<port name="SL1END0">open</port>
+					<port name="SS2END0">open</port>
+					<port name="SW2END0">open</port>
+					<port name="WL1END0">open</port>
+					<port name="WR1END0">open</port>
+					<port name="WW2END0">open</port>
+				</inputs>
+				<outputs>
+					<port name="OUT">BEL_RX-FAN_ALT4[0].LOGIC_OUTS8[0]-&gt;BEL_RX-FAN_ALT4</port>
+				</outputs>
+				<clocks />
+			</block>
+			<block name="open" instance="BEL_RX-FAN_ALT5[0]" mode="default" pb_type_num_modes="1">
+				<inputs>
+					<port name="BYP_BOUNCE1">open</port>
+					<port name="BYP_BOUNCE5">open</port>
+					<port name="EE2END2">open</port>
+					<port name="EL1END2">open</port>
+					<port name="ER1END2">open</port>
+					<port name="FAN_BOUNCE0">open</port>
+					<port name="FAN_BOUNCE1">open</port>
+					<port name="LOGIC_OUTS6">open</port>
+					<port name="LOGIC_OUTS10">open</port>
+					<port name="LOGIC_OUTS16">BLK_BB-INT_L.LOGIC_OUTS[16]-&gt;BEL_RX-FAN_ALT5.LOGIC_OUTS16</port>
+					<port name="NE2END2">open</port>
+					<port name="NN2END2">open</port>
+					<port name="NR1END2">open</port>
+					<port name="NW2END3">open</port>
+					<port name="SE2END2">open</port>
+					<port name="SL1END2">open</port>
+					<port name="SR1END2">open</port>
+					<port name="SS2END2">open</port>
+					<port name="SW2END2">open</port>
+					<port name="WL1END2">open</port>
+					<port name="WR1END2">open</port>
+					<port name="WW2END2">open</port>
+				</inputs>
+				<outputs>
+					<port name="OUT">BEL_RX-FAN_ALT5[0].LOGIC_OUTS16[0]-&gt;BEL_RX-FAN_ALT5</port>
+				</outputs>
+				<clocks />
+			</block>
+			<block name="open" instance="BEL_RX-FAN_ALT6[0]" mode="default" pb_type_num_modes="1">
+				<inputs>
+					<port name="BYP_BOUNCE1">BEL_RX-BYP_BOUNCE1[0].OUT[0]-&gt;BEL_RX-FAN_ALT6.BYP_BOUNCE1</port>
+					<port name="BYP_BOUNCE7">open</port>
+					<port name="EE2END1">open</port>
+					<port name="EL1END1">open</port>
+					<port name="ER1END1">open</port>
+					<port name="FAN_BOUNCE1">open</port>
+					<port name="FAN_BOUNCE7">open</port>
+					<port name="LOGIC_OUTS1">open</port>
+					<port name="LOGIC_OUTS13">open</port>
+					<port name="LOGIC_OUTS23">open</port>
+					<port name="NE2END1">open</port>
+					<port name="NL1END2">open</port>
+					<port name="NN2END1">open</port>
+					<port name="NR1END1">open</port>
+					<port name="NW2END2">open</port>
+					<port name="SE2END1">open</port>
+					<port name="SL1END1">open</port>
+					<port name="SR1END1">open</port>
+					<port name="SS2END1">open</port>
+					<port name="SW2END1">open</port>
+					<port name="WL1END1">open</port>
+					<port name="WR1END1">open</port>
+					<port name="WW2END1">open</port>
+				</inputs>
+				<outputs>
+					<port name="OUT">BEL_RX-FAN_ALT6[0].BYP_BOUNCE1[0]-&gt;BEL_RX-FAN_ALT6</port>
+				</outputs>
+				<clocks />
+			</block>
+			<block name="open" instance="BEL_RX-FAN_ALT7[0]" />
+			<block name="open" instance="BEL_RX-FAN_BOUNCE0[0]" />
+			<block name="open" instance="BEL_RX-FAN_BOUNCE1[0]" mode="default" pb_type_num_modes="1">
+				<inputs>
+					<port name="FAN_ALT1">BEL_RX-FAN_ALT1[0].OUT[0]-&gt;BEL_RX-FAN_BOUNCE1.FAN_ALT1</port>
+				</inputs>
+				<outputs>
+					<port name="OUT">BEL_RX-FAN_BOUNCE1[0].FAN_ALT1[0]-&gt;BEL_RX-FAN_BOUNCE1</port>
+				</outputs>
+				<clocks />
+			</block>
+			<block name="open" instance="BEL_RX-FAN_BOUNCE2[0]" />
+			<block name="open" instance="BEL_RX-FAN_BOUNCE3[0]" />
+			<block name="open" instance="BEL_RX-FAN_BOUNCE4[0]" mode="default" pb_type_num_modes="1">
+				<inputs>
+					<port name="FAN_ALT4">BEL_RX-FAN_ALT4[0].OUT[0]-&gt;BEL_RX-FAN_BOUNCE4.FAN_ALT4</port>
+				</inputs>
+				<outputs>
+					<port name="OUT">BEL_RX-FAN_BOUNCE4[0].FAN_ALT4[0]-&gt;BEL_RX-FAN_BOUNCE4</port>
+				</outputs>
+				<clocks />
+			</block>
+			<block name="open" instance="BEL_RX-FAN_BOUNCE5[0]" mode="default" pb_type_num_modes="1">
+				<inputs>
+					<port name="FAN_ALT5">BEL_RX-FAN_ALT5[0].OUT[0]-&gt;BEL_RX-FAN_BOUNCE5.FAN_ALT5</port>
+				</inputs>
+				<outputs>
+					<port name="OUT">BEL_RX-FAN_BOUNCE5[0].FAN_ALT5[0]-&gt;BEL_RX-FAN_BOUNCE5</port>
+				</outputs>
+				<clocks />
+			</block>
+			<block name="open" instance="BEL_RX-FAN_BOUNCE6[0]" />
+			<block name="open" instance="BEL_RX-FAN_BOUNCE7[0]" />
+			<block name="open" instance="BEL_RX-IMUX0[0]" />
+			<block name="open" instance="BEL_RX-IMUX1[0]" />
+			<block name="open" instance="BEL_RX-IMUX2[0]" />
+			<block name="open" instance="BEL_RX-IMUX3[0]" />
+			<block name="open" instance="BEL_RX-IMUX4[0]" />
+			<block name="open" instance="BEL_RX-IMUX5[0]" />
+			<block name="open" instance="BEL_RX-IMUX6[0]" />
+			<block name="open" instance="BEL_RX-IMUX7[0]" />
+			<block name="open" instance="BEL_RX-IMUX8[0]" />
+			<block name="open" instance="BEL_RX-IMUX9[0]" />
+			<block name="open" instance="BEL_RX-IMUX10[0]" />
+			<block name="open" instance="BEL_RX-IMUX11[0]" />
+			<block name="open" instance="BEL_RX-IMUX12[0]" />
+			<block name="open" instance="BEL_RX-IMUX13[0]" />
+			<block name="open" instance="BEL_RX-IMUX14[0]" />
+			<block name="open" instance="BEL_RX-IMUX15[0]" />
+			<block name="open" instance="BEL_RX-IMUX16[0]" />
+			<block name="open" instance="BEL_RX-IMUX17[0]" />
+			<block name="open" instance="BEL_RX-IMUX18[0]" />
+			<block name="open" instance="BEL_RX-IMUX19[0]" />
+			<block name="open" instance="BEL_RX-IMUX20[0]" />
+			<block name="open" instance="BEL_RX-IMUX21[0]" />
+			<block name="open" instance="BEL_RX-IMUX22[0]" />
+			<block name="open" instance="BEL_RX-IMUX23[0]" />
+			<block name="open" instance="BEL_RX-IMUX24[0]" />
+			<block name="open" instance="BEL_RX-IMUX25[0]" />
+			<block name="open" instance="BEL_RX-IMUX26[0]" />
+			<block name="open" instance="BEL_RX-IMUX27[0]" />
+			<block name="open" instance="BEL_RX-IMUX28[0]" />
+			<block name="open" instance="BEL_RX-IMUX29[0]" />
+			<block name="open" instance="BEL_RX-IMUX30[0]" />
+			<block name="open" instance="BEL_RX-IMUX31[0]" />
+			<block name="open" instance="BEL_RX-IMUX32[0]" />
+			<block name="open" instance="BEL_RX-IMUX33[0]" />
+			<block name="open" instance="BEL_RX-IMUX34[0]" />
+			<block name="open" instance="BEL_RX-IMUX35[0]" />
+			<block name="open" instance="BEL_RX-IMUX36[0]" />
+			<block name="open" instance="BEL_RX-IMUX37[0]" />
+			<block name="open" instance="BEL_RX-IMUX38[0]" />
+			<block name="open" instance="BEL_RX-IMUX39[0]" />
+			<block name="open" instance="BEL_RX-IMUX40[0]" />
+			<block name="open" instance="BEL_RX-IMUX41[0]" />
+			<block name="open" instance="BEL_RX-IMUX42[0]" />
+			<block name="open" instance="BEL_RX-IMUX43[0]" />
+			<block name="open" instance="BEL_RX-IMUX44[0]" />
+			<block name="open" instance="BEL_RX-IMUX45[0]" />
+			<block name="open" instance="BEL_RX-IMUX46[0]" />
+			<block name="open" instance="BEL_RX-IMUX47[0]" />
+		</block>
+	</block>
+	<block name="clk" instance="BLK_BB-VPR_PAD[2]" mode="PAD_IS_INPUT">
+		<inputs>
+			<port name="outpad">open</port>
+		</inputs>
+		<outputs>
+			<port name="inpad">PAD_IN-INPUT[0].inpad[0]-&gt;INPUT</port>
+		</outputs>
+		<clocks />
+		<block name="clk" instance="PAD_IN-INPUT[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">clk</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="di" instance="BLK_BB-VPR_PAD[3]" mode="PAD_IS_INPUT">
+		<inputs>
+			<port name="outpad">open</port>
+		</inputs>
+		<outputs>
+			<port name="inpad">PAD_IN-INPUT[0].inpad[0]-&gt;INPUT</port>
+		</outputs>
+		<clocks />
+		<block name="di" instance="PAD_IN-INPUT[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">di</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+</block>

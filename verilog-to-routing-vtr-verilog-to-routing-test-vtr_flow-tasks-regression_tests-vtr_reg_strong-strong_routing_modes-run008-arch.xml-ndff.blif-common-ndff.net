@@ -1,0 +1,407 @@
+<?xml version="1.0"?>
+<block name="ndff.net" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:4329a953c3a1510da312e14e04ae4fc110380dbe02086cf75f00bf1227fdaeea" atom_netlist_id="SHA256:409e03e89d0ac643da31bd11a5981c828ce74bf8fb680b32a3567f5c17331b1c">
+	<inputs>clk cen ina inb</inputs>
+	<outputs>out:outa out:outb out:outc out:outd</outputs>
+	<clocks>clk</clocks>
+	<block name="ina_n1" instance="ff_tile[0]" mode="default">
+		<inputs>
+			<port name="in">open open ina_n1 ina</port>
+			<port name="cen">cen</port>
+		</inputs>
+		<outputs>
+			<port name="out">open open flipflop[2].out[0]-&gt;out[2] flipflop[3].out[0]-&gt;out[3]</port>
+		</outputs>
+		<clocks>
+			<port name="clk">clk</port>
+		</clocks>
+		<block name="open" instance="flipflop[0]" />
+		<block name="open" instance="flipflop[1]" />
+		<block name="outa" instance="flipflop[2]" mode="DFF">
+			<inputs>
+				<port name="cen">open</port>
+				<port name="data">ff_tile.in[2]-&gt;in[2]</port>
+			</inputs>
+			<outputs>
+				<port name="out">DFF[0].out[0]-&gt;out</port>
+			</outputs>
+			<clocks>
+				<port name="posclk">clkinv[0].posclk[0]-&gt;posclk[2]</port>
+				<port name="negclk">open</port>
+			</clocks>
+			<block name="outa" instance="DFF[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="data">flipflop.data[0]-&gt;data</port>
+				</inputs>
+				<outputs>
+					<port name="out">outa</port>
+				</outputs>
+				<clocks>
+					<port name="clk">flipflop.posclk[0]-&gt;clk</port>
+				</clocks>
+			</block>
+		</block>
+		<block name="ina_n1" instance="flipflop[3]" mode="DFFE">
+			<inputs>
+				<port name="cen">ff_tile.cen[0]-&gt;cen[3]</port>
+				<port name="data">ff_tile.in[3]-&gt;in[3]</port>
+			</inputs>
+			<outputs>
+				<port name="out">DFFE[0].out[0]-&gt;out</port>
+			</outputs>
+			<clocks>
+				<port name="posclk">clkinv[0].posclk[0]-&gt;posclk[3]</port>
+				<port name="negclk">open</port>
+			</clocks>
+			<block name="ina_n1" instance="DFFE[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="cen">flipflop.cen[0]-&gt;cen</port>
+					<port name="data">flipflop.data[0]-&gt;data</port>
+				</inputs>
+				<outputs>
+					<port name="out">ina_n1</port>
+				</outputs>
+				<clocks>
+					<port name="clk">flipflop.posclk[0]-&gt;clk</port>
+				</clocks>
+			</block>
+		</block>
+		<block name="open" instance="clkinv[0]" mode="straight" pb_type_num_modes="2">
+			<inputs />
+			<outputs>
+				<port name="posclk">clkinv-pos[0].out[0]-&gt;out</port>
+				<port name="negclk">open</port>
+			</outputs>
+			<clocks>
+				<port name="clk">ff_tile.clk[0]-&gt;clk</port>
+			</clocks>
+			<block name="open" instance="clkinv-pos[0]" mode="default" pb_type_num_modes="1">
+				<inputs />
+				<outputs>
+					<port name="out">clkinv-pos[0].in[0]-&gt;_</port>
+				</outputs>
+				<clocks>
+					<port name="in">clkinv.clk[0]-&gt;in</port>
+				</clocks>
+			</block>
+		</block>
+	</block>
+	<block name="inb_n1" instance="ff_tile[1]" mode="default">
+		<inputs>
+			<port name="in">open ina_n1 inb_n1 inb</port>
+			<port name="cen">ina</port>
+		</inputs>
+		<outputs>
+			<port name="out">open flipflop[1].out[0]-&gt;out[1] flipflop[2].out[0]-&gt;out[2] flipflop[3].out[0]-&gt;out[3]</port>
+		</outputs>
+		<clocks>
+			<port name="clk">clk</port>
+		</clocks>
+		<block name="open" instance="flipflop[0]" />
+		<block name="outc" instance="flipflop[1]" mode="DFFN">
+			<inputs>
+				<port name="cen">open</port>
+				<port name="data">ff_tile.in[1]-&gt;in[1]</port>
+			</inputs>
+			<outputs>
+				<port name="out">DFFN[0].out[0]-&gt;out</port>
+			</outputs>
+			<clocks>
+				<port name="posclk">open</port>
+				<port name="negclk">clkinv[0].negclk[0]-&gt;negclk[1]</port>
+			</clocks>
+			<block name="outc" instance="DFFN[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="data">flipflop.data[0]-&gt;data</port>
+				</inputs>
+				<outputs>
+					<port name="out">outc</port>
+				</outputs>
+				<clocks>
+					<port name="clk">flipflop.negclk[0]-&gt;clk</port>
+				</clocks>
+			</block>
+		</block>
+		<block name="outd" instance="flipflop[2]" mode="DFFN">
+			<inputs>
+				<port name="cen">open</port>
+				<port name="data">ff_tile.in[2]-&gt;in[2]</port>
+			</inputs>
+			<outputs>
+				<port name="out">DFFN[0].out[0]-&gt;out</port>
+			</outputs>
+			<clocks>
+				<port name="posclk">open</port>
+				<port name="negclk">clkinv[0].negclk[0]-&gt;negclk[2]</port>
+			</clocks>
+			<block name="outd" instance="DFFN[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="data">flipflop.data[0]-&gt;data</port>
+				</inputs>
+				<outputs>
+					<port name="out">outd</port>
+				</outputs>
+				<clocks>
+					<port name="clk">flipflop.negclk[0]-&gt;clk</port>
+				</clocks>
+			</block>
+		</block>
+		<block name="inb_n1" instance="flipflop[3]" mode="DFFNE">
+			<inputs>
+				<port name="cen">ff_tile.cen[0]-&gt;cen[3]</port>
+				<port name="data">ff_tile.in[3]-&gt;in[3]</port>
+			</inputs>
+			<outputs>
+				<port name="out">DFFNE[0].out[0]-&gt;out</port>
+			</outputs>
+			<clocks>
+				<port name="posclk">open</port>
+				<port name="negclk">clkinv[0].negclk[0]-&gt;negclk[3]</port>
+			</clocks>
+			<block name="inb_n1" instance="DFFNE[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="cen">flipflop.cen[0]-&gt;cen</port>
+					<port name="data">flipflop.data[0]-&gt;data</port>
+				</inputs>
+				<outputs>
+					<port name="out">inb_n1</port>
+				</outputs>
+				<clocks>
+					<port name="clk">flipflop.negclk[0]-&gt;clk</port>
+				</clocks>
+			</block>
+		</block>
+		<block name="open" instance="clkinv[0]" mode="invert" pb_type_num_modes="2">
+			<inputs />
+			<outputs>
+				<port name="posclk">open</port>
+				<port name="negclk">clkinv-neg[0].out[0]-&gt;out</port>
+			</outputs>
+			<clocks>
+				<port name="clk">ff_tile.clk[0]-&gt;clk</port>
+			</clocks>
+			<block name="open" instance="clkinv-neg[0]" mode="default" pb_type_num_modes="1">
+				<inputs />
+				<outputs>
+					<port name="out">clkinv-neg[0].in[0]-&gt;_</port>
+				</outputs>
+				<clocks>
+					<port name="in">clkinv.clk[0]-&gt;in</port>
+				</clocks>
+			</block>
+		</block>
+	</block>
+	<block name="out:outa" instance="io_tile[2]" mode="OUTPUT">
+		<inputs>
+			<port name="in">outa</port>
+		</inputs>
+		<outputs>
+			<port name="out">open</port>
+		</outputs>
+		<clocks />
+		<block name="out:outa" instance="pad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">io_tile.in[0]-&gt;-</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:outb" instance="io_tile[3]" mode="OUTPUT">
+		<inputs>
+			<port name="in">outb</port>
+		</inputs>
+		<outputs>
+			<port name="out">open</port>
+		</outputs>
+		<clocks />
+		<block name="out:outb" instance="pad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">io_tile.in[0]-&gt;-</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:outc" instance="io_tile[4]" mode="OUTPUT">
+		<inputs>
+			<port name="in">outc</port>
+		</inputs>
+		<outputs>
+			<port name="out">open</port>
+		</outputs>
+		<clocks />
+		<block name="out:outc" instance="pad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">io_tile.in[0]-&gt;-</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="out:outd" instance="io_tile[5]" mode="OUTPUT">
+		<inputs>
+			<port name="in">outd</port>
+		</inputs>
+		<outputs>
+			<port name="out">open</port>
+		</outputs>
+		<clocks />
+		<block name="out:outd" instance="pad[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">io_tile.in[0]-&gt;-</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="outb" instance="ff_tile[6]" mode="default">
+		<inputs>
+			<port name="in">open open open inb_n1</port>
+			<port name="cen">open</port>
+		</inputs>
+		<outputs>
+			<port name="out">open open open flipflop[3].out[0]-&gt;out[3]</port>
+		</outputs>
+		<clocks>
+			<port name="clk">clk</port>
+		</clocks>
+		<block name="open" instance="flipflop[0]" />
+		<block name="open" instance="flipflop[1]" />
+		<block name="open" instance="flipflop[2]" />
+		<block name="outb" instance="flipflop[3]" mode="DFF">
+			<inputs>
+				<port name="cen">open</port>
+				<port name="data">ff_tile.in[3]-&gt;in[3]</port>
+			</inputs>
+			<outputs>
+				<port name="out">DFF[0].out[0]-&gt;out</port>
+			</outputs>
+			<clocks>
+				<port name="posclk">clkinv[0].posclk[0]-&gt;posclk[3]</port>
+				<port name="negclk">open</port>
+			</clocks>
+			<block name="outb" instance="DFF[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="data">flipflop.data[0]-&gt;data</port>
+				</inputs>
+				<outputs>
+					<port name="out">outb</port>
+				</outputs>
+				<clocks>
+					<port name="clk">flipflop.posclk[0]-&gt;clk</port>
+				</clocks>
+			</block>
+		</block>
+		<block name="open" instance="clkinv[0]" mode="straight" pb_type_num_modes="2">
+			<inputs />
+			<outputs>
+				<port name="posclk">clkinv-pos[0].out[0]-&gt;out</port>
+				<port name="negclk">open</port>
+			</outputs>
+			<clocks>
+				<port name="clk">ff_tile.clk[0]-&gt;clk</port>
+			</clocks>
+			<block name="open" instance="clkinv-pos[0]" mode="default" pb_type_num_modes="1">
+				<inputs />
+				<outputs>
+					<port name="out">clkinv-pos[0].in[0]-&gt;_</port>
+				</outputs>
+				<clocks>
+					<port name="in">clkinv.clk[0]-&gt;in</port>
+				</clocks>
+			</block>
+		</block>
+	</block>
+	<block name="clk" instance="io_tile[7]" mode="INPUT">
+		<inputs>
+			<port name="in">open</port>
+		</inputs>
+		<outputs>
+			<port name="out">pad[0].inpad[0]-&gt;-</port>
+		</outputs>
+		<clocks />
+		<block name="clk" instance="pad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">clk</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="cen" instance="io_tile[8]" mode="INPUT">
+		<inputs>
+			<port name="in">open</port>
+		</inputs>
+		<outputs>
+			<port name="out">pad[0].inpad[0]-&gt;-</port>
+		</outputs>
+		<clocks />
+		<block name="cen" instance="pad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">cen</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="ina" instance="io_tile[9]" mode="INPUT">
+		<inputs>
+			<port name="in">open</port>
+		</inputs>
+		<outputs>
+			<port name="out">pad[0].inpad[0]-&gt;-</port>
+		</outputs>
+		<clocks />
+		<block name="ina" instance="pad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">ina</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+	<block name="inb" instance="io_tile[10]" mode="INPUT">
+		<inputs>
+			<port name="in">open</port>
+		</inputs>
+		<outputs>
+			<port name="out">pad[0].inpad[0]-&gt;-</port>
+		</outputs>
+		<clocks />
+		<block name="inb" instance="pad[0]">
+			<attributes />
+			<parameters />
+			<inputs />
+			<outputs>
+				<port name="inpad">inb</port>
+			</outputs>
+			<clocks />
+		</block>
+	</block>
+</block>

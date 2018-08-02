@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<block name="example.net" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:77d432a876ea83d63cf2fea7381ec822701866febf6bc0c5f493866baa8cc68a" atom_netlist_id="SHA256:156bb6d2cb4f7381b2cbc77dacaa16c5b54a7b2cdd7cc9c0643035797aeb4c86">
+	<inputs>btn</inputs>
+	<outputs>out:LED3</outputs>
+	<clocks></clocks>
+	<block name="out:LED3" instance="BLK_TL-PIO_A[0]" mode="PAD_IS_OUTPUT">
+		<inputs>
+			<port name="io_D_OUT">btn open</port>
+			<port name="io_OUT_ENB">open</port>
+		</inputs>
+		<outputs>
+			<port name="io_D_IN">open open</port>
+		</outputs>
+		<clocks />
+		<block name="out:LED3" instance="PAD[0]" mode="default">
+			<inputs>
+				<port name="D_OUT">BLK_TL-PIO_A.io_D_OUT[0]-&gt;io_D_OUT[0] open</port>
+			</inputs>
+			<outputs />
+			<clocks />
+			<block name="out:LED3" instance="output[0]">
+				<attributes />
+				<parameters />
+				<inputs>
+					<port name="outpad">PAD.D_OUT[0]-&gt;D_OUT</port>
+				</inputs>
+				<outputs />
+				<clocks />
+			</block>
+		</block>
+	</block>
+	<block name="btn" instance="BLK_TL-PIO_A[1]" mode="PAD_IS_INPUT">
+		<inputs>
+			<port name="io_D_OUT">open open</port>
+			<port name="io_OUT_ENB">open</port>
+		</inputs>
+		<outputs>
+			<port name="io_D_IN">PAD[0].D_IN[0]-&gt;io_D_IN[0] open</port>
+		</outputs>
+		<clocks />
+		<block name="btn" instance="PAD[0]" mode="default">
+			<inputs />
+			<outputs>
+				<port name="D_IN">input[0].inpad[0]-&gt;D_IN_0 open</port>
+			</outputs>
+			<clocks />
+			<block name="btn" instance="input[0]">
+				<attributes />
+				<parameters />
+				<inputs />
+				<outputs>
+					<port name="inpad">btn</port>
+				</outputs>
+				<clocks />
+			</block>
+		</block>
+	</block>
+</block>

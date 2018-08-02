@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<block name="const.net" instance="FPGA_packed_netlist[0]" architecture_id="SHA256:c48f3404a248664bdc41b980a47588eff48a7f621b33fe2cb59066f7266ee064" atom_netlist_id="SHA256:9b73a6a9f6e5591feace828dc502c1e419670da36e953182a04b5da60e25d66c">
+	<inputs></inputs>
+	<outputs>out:out</outputs>
+	<clocks></clocks>
+	<block name="out:out" instance="BLK_IG-OBUF[0]" mode="default">
+		<inputs>
+			<port name="O">$true</port>
+		</inputs>
+		<outputs />
+		<clocks />
+		<block name="out:out" instance="BLK_BB-OBUF[0]">
+			<attributes />
+			<parameters />
+			<inputs>
+				<port name="outpad">BLK_IG-OBUF.O[0]-&gt;OBUF</port>
+			</inputs>
+			<outputs />
+			<clocks />
+		</block>
+	</block>
+	<block name="$true" instance="BLK_TI-TILE[1]" mode="default">
+		<inputs>
+			<port name="IN">open open open open open open</port>
+			<port name="CIN">open</port>
+		</inputs>
+		<outputs>
+			<port name="OUT">BLK_SI-LUTFF[0].O[0]-&gt;BLK_TI-TILE.OUT[0] open</port>
+			<port name="COUT">open</port>
+		</outputs>
+		<clocks>
+			<port name="CLK">open open</port>
+		</clocks>
+		<block name="open" instance="BLK_BB-CARRY[0]" />
+		<block name="$true" instance="BLK_SI-LUTFF[0]" mode="default">
+			<inputs>
+				<port name="I">open open open open</port>
+			</inputs>
+			<outputs>
+				<port name="O">BLK_IG-LUTFF[0].O[0]-&gt;BLK_SI-LUTFF.O</port>
+				<port name="LO">open</port>
+			</outputs>
+			<clocks>
+				<port name="C">open</port>
+			</clocks>
+			<block name="$true" instance="BLK_IG-LUTFF[0]" mode="default">
+				<inputs>
+					<port name="I">open open open open</port>
+				</inputs>
+				<outputs>
+					<port name="O">BEL_LT-LUT[0].out[0]-&gt;BLK_IG-LUTFF.O</port>
+					<port name="LO">open</port>
+				</outputs>
+				<clocks>
+					<port name="C">open</port>
+				</clocks>
+				<block name="open" instance="BEL_FF-FF[0]" />
+				<block name="$true" instance="BEL_LT-LUT[0]" mode="BEL_LT-LUT">
+					<inputs>
+						<port name="in">open open open open</port>
+					</inputs>
+					<outputs>
+						<port name="out">lut[0].out[0]-&gt;direct:BEL_LT-LUT</port>
+					</outputs>
+					<clocks />
+					<block name="$true" instance="lut[0]">
+						<attributes />
+						<parameters />
+						<inputs>
+							<port name="in">open open open open</port>
+						</inputs>
+						<outputs>
+							<port name="out">$true</port>
+						</outputs>
+						<clocks />
+					</block>
+				</block>
+			</block>
+		</block>
+	</block>
+</block>
